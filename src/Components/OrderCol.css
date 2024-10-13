@@ -1,0 +1,33 @@
+.mainorder{
+    display: flex;
+    gap: 10px;
+}
+.orderone{
+    border: 1px solid orange;
+    width: 200px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 5px;
+    color: rgba(0, 179, 254, 1);
+    background-color: white;
+}
+.ordertwo{
+    border: 1px solid grey;
+    width: 200px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: azure;
+    border: none;
+    padding: 5px;
+    color: rgba(145, 151, 179, 1);
+}
+.orderthree{
+    border: 1px solid grey;
+    width: 200px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: azure;
+    border: none;
+    padding: 5px;
+    color: rgba(145, 151, 179, 1);
+}

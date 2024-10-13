@@ -1,0 +1,68 @@
+
+.adminfirsttext{
+    font-weight: bold;
+    font-size: 20px;
+}
+.flexakar{
+    display: flex;
+    border: 1px solid rgba(255, 153, 58, 1);
+    width: 110px;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    align-items: center;
+}
+.akartext{
+    color: rgba(255, 153, 58, 1);
+}
+.circlearrowinflex{
+    display: flex;
+    border: 1px solid rgba(255, 153, 58, 1);
+    width: 200px;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 153, 58, 1);
+    align-items: center;
+}
+.circlearrowtext{
+    color: white;
+}
+.flexmain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.doubleinstibutton{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+.instib{
+    display: flex;
+    align-items: center;
+}
+.der{
+    outline: none;
+}
+
+
+
+.circleakarflex{
+    display: flex;
+    gap: 20px;
+}
+.open-modal-btn {
+    padding: 10px 20px;
+    background: skyblue;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .open-modal-btn:hover {
+    background: deepskyblue;
+  }

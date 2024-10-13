@@ -1,0 +1,68 @@
+.textapprove .approve{
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+.tabs{
+  width:100%;
+  padding: 30px;
+  border-collapse: collapse;
+
+  
+}
+
+.sultab th{
+  border: 1px soid green;
+  color: blue;
+  font-size: 14px;
+  align-items: center;
+  border: none;
+  background-color: white;
+  padding: 10px;
+  
+}
+.sultab tr:nth-child(odd){
+  background-color:rgb(250, 245, 245) ;
+
+}
+.sultab td{
+  font-size: 14px;
+  text-align: center;
+  padding: 8px;
+  color: rgba(33, 33, 33, 1);
+  font-style: general sans;
+  
+}
+.boxatone{
+  border: 1px solid rgba(223, 222, 222, 1);
+  padding: 10px;
+  width: 50px;
+  text-align: center;
+  position: relative;
+  bottom: 15px;
+}
+.mainflexpageword{
+  color: rgba(33, 33, 33, 1);
+  font-weight: bold;
+}
+.myflexpage{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+.mainflexpage{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.mainsentence{
+  color: rgba(119, 120, 120, 1);
+  text-align: center;
+}
+.secondsentence{
+  color: rgba(33, 33, 33, 1);
+  text-align: center;
+}

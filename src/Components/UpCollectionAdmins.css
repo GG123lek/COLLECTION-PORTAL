@@ -1,0 +1,11 @@
+.backgroundsecondstate{
+    border: 1px solid yellow;
+    margin: 30px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    height: 900px;
+}
+.upborderdown{
+    border-bottom: 1px solid rgba(238, 238, 238, 1);
+}

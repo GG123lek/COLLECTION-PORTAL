@@ -1,0 +1,70 @@
+
+.unified{
+    display: flex;    
+   align-items: center;
+   padding: 30px;
+   gap: 20px; 
+
+}
+.imageposition{
+   position: relative;
+   bottom: 10.52px;
+}
+
+
+ 
+.paint{
+   text-decoration: none;
+   display: flex;
+}
+.paint p{
+  
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+  
+}
+
+
+ 
+  ul {
+   list-style-type: none;
+   padding: 0;
+ }
+ 
+  li {
+   margin: 10px 0;
+ }
+ 
+ 
+  .paint {
+   width: 90%;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   color:"black";
+   margin: 20px;
+   border-radius: 5px;
+  
+ }
+  
+ .paint.active {
+   background-color: rgba(255, 153, 58, 1);
+   color: white;
+   
+ }
+ .logout{
+   display: flex;
+   align-items: center;
+   margin: 50px;
+   gap: 20px;
+   color: green;
+ }
+.downpage{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}

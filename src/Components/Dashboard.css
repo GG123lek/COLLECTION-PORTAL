@@ -1,0 +1,165 @@
+
+.praz{
+    background-color: skyblue;
+    border-radius: 60%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .praze{
+    background-color: aquamarine;
+    border-radius: 60%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .prazs{
+    background-color: aquamarine;
+    border-radius: 60%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ .mainpicron{
+  padding: 10px;
+ }
+ .threeflexpro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    bottom: 65px;
+ }
+ .threeflexpros{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    bottom: 100px;
+ }
+ .threeflexpross{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    bottom: 130px;
+ }
+ .progressmain{
+    margin: 15px 0;
+    position: relative;
+    bottom: 75px;
+ }
+ .progressmains{
+    margin: 15px 0;
+    position: relative;
+    bottom:110px;
+ }
+ .progressmainss{
+    margin: 15px 0;
+    position: relative;
+    bottom:140px;
+ }
+ .gpro{
+    color: rgba(49, 49, 49, 1);
+    font-weight: bold;
+    font-size: 15px;
+ }
+ .tpro{
+    font-size: 15px;
+    color: rgba(49, 49, 49, 1);
+ }
+ .tabs{
+    width:100%;
+    padding: 30px;
+    border-collapse: collapse;
+    
+  }
+  
+  .sultab th{
+    border: 1px soid green;
+    color: blue;
+    font-size: 14px;
+    align-items: center;
+    border: none;
+    background-color: white;
+    padding: 10px;
+    
+  }
+  .sultab tr:nth-child(odd){
+    background-color:rgb(250, 245, 245) ;
+  
+  }
+  .sultab td{
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    color: rgba(33, 33, 33, 1);
+    font-style: general sans;
+    
+  }
+  
+
+.bottomtabletext{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+  .bottomtabletext .textbot{
+    color: rgba(255, 153, 58, 1);
+  }
+  
+   .pdivtext{
+    border: 1px solid grey;
+    display: flex;
+    gap: 10px;
+    width: 15%;
+    border-radius: 10px;
+    background: rgba(248, 253, 255, 1);;
+    border: none;
+    justify-content: center;
+    
+   }
+   input::placeholder{
+    font-size: 10px;
+   }
+  
+   
+   .fourtext{
+    padding: 30px;
+   }
+   .mythreetext{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+   }
+   .trans{
+    color: rgba(255, 153, 58, 1);
+    border-bottom: 5px solid rgba(255, 153, 58, 1);;
+    text-align: center;
+  
+   }
+   .succ
+   {
+    color: rgba(150, 148, 148, 1);
+   }
+   .the{
+    border-top: 1px solid red;
+    width: 10px;
+   }
+   .liness{
+    border-bottom: 1px solid #EEEEEE;
+   }
+   .tablecontainerdashboard{
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    width: 100%;
+   
+  }
