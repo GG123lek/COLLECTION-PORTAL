@@ -1,0 +1,19 @@
+.tabs {
+    width: 100%;
+    border-collapse:;
+    text-align: start;
+  
+  }
+  
+  .tabs th, .tabs td {
+    border: 1px solid #ddd; 
+    padding: 8x; 
+    text-align: start;
+    border: none;
+    padding: 15px;
+  }
+  
+  .tabs th {
+    background-color: white; 
+    padding: 20px;
+  }

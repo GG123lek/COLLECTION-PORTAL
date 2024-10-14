@@ -30,30 +30,17 @@ const [MyOrders, setMyOrders] = useState();
   return (
     <Layout >
 
-
-        
-
-
-
-
-
-
-
-
-
-
           <div style={{display:'flex',justifyContent:'flex-end',gap:'20px',alignItems:'center',padding:'20px'}}>
-    <div style={{
-        display:'flex',
-        alignItems:'center',
-        border:'none',
-        gap:'10px',
-        width:'20%',
-        padding:'10px',
-        borderRadius:'5px',
-        backgroundColor:'white'
-       
-    }}>
+          <div style={{
+              display:'flex',
+              alignItems:'center',
+              border:'none',
+             
+              width:'30%',
+              borderRadius:'5px',
+              backgroundColor:'white'
+            
+          }}>
     <IoIosSearch style={{color:'red'}}/>
     <input name="text" placeholder="Search Anything...." style={{border:'none', backgroundColor:'transparent',outline:'none'}}/>
     </div>

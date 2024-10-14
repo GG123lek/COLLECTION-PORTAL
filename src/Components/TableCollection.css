@@ -1,0 +1,28 @@
+.tabes{
+    width:100%;
+    padding: 10px;
+    border-collapse: collapse;
+  }
+  
+  .sultabes th{
+    border: 1px soid green;
+    color: blue;
+    font-size: 14px;
+    align-items: center;
+    border: none;
+    background-color: white;
+    padding: 13px;
+    
+  }
+  .sultabes tr:nth-child(odd){
+    background-color:rgb(250, 245, 245) ;
+  
+  }
+  .sultabes td{
+    font-size: 14px;
+    text-align: center;
+    padding: 13px;
+    color: rgba(33, 33, 33, 1);
+    font-style: general sans;
+    
+  }

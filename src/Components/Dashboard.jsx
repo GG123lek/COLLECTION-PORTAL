@@ -60,9 +60,7 @@ function Dashboard() {
         display:'flex',
         alignItems:'center',
         border:'none',
-        gap:'10px',
-        width:'20%',
-        padding:'10px',
+        width:'30%',
         borderRadius:'5px',
         backgroundColor:'white'
        
