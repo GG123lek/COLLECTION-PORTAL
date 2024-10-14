@@ -1,4 +1,5 @@
 import Layout from "./Layout"
+import "./Users.css"
 
 function Users() {
   return (

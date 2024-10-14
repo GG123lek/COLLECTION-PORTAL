@@ -8,6 +8,7 @@ import bluebell from "../assets/Images/bluebell.png";
 import collectionarrowone from "../assets/Images/arrowatcir.png";
 import collectionarrowtwo from "../assets/Images/arrowrightcircle.png";
 import insticircle from "../assets/Images/circleinarrow.svg";
+import InstiModal from './instiModal';
 import { PiPencilSimpleLine } from "react-icons/pi";
 
 
@@ -107,7 +108,11 @@ function Institution() {
     },
   ];
 
+  const [isModalOpen, setModalOpen] = useState(false);
 
+  const handleAddInstitutionClick = () => {
+    setModalOpen(true);
+  };
   return (
     <Layout>
       <>
@@ -136,7 +141,7 @@ function Institution() {
               <p style={{ color: 'black', fontSize: '20px', fontWeight: 'bold' }}>Institutions</p>
               <p style={{ color: 'black' }}> Here is the list of all the institutions created by the super administrator</p>
             </div>
-            <div className="circlearrowinflex">
+            <div className="circlearrowinflex" onClick={handleAddInstitutionClick}>
               <img src={insticircle} alt="" />
               <p className="circlearrowtext">Add New Institution</p>
             </div>
@@ -204,6 +209,7 @@ function Institution() {
             </div>
           </div>
         </div>
+        <InstiModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       </>
     </Layout>
   );
