@@ -1,0 +1,87 @@
+.sort-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: #fff;
+    width: 40%;
+    height: 40px;
+}
+
+.sort-container #sortText {
+    margin-right: 20px;
+    color: rgba(125, 125, 125, 1);
+    
+}
+
+.sort-container::after {
+    content: '▼';
+    font-size: 12px;
+    position: absolute; 
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(125, 125, 125, 1)
+    
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+     min-width: 100%; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid #ccc;
+    margin-top:10px;
+    margin-left: -10px;
+    text-align: center;
+    color: rgba(125, 125, 125, 1);
+    border-radius: 10px;
+
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+.billertabs{
+    width:100%;
+    padding: 10px;
+    border-collapse: collapse;
+  
+    
+  }
+  
+  .billersultab th{
+    border: 1px soid green;
+    color: blue;
+    font-size: 14px;
+    align-items: center;
+    border: none;
+    background-color: white;
+    padding: 20px;
+    text-align: start;
+  }
+  .billersultab tr:nth-child(odd){
+    background-color:rgb(250, 245, 245) ;
+  
+  }
+  .billersultab td{
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    color: rgba(33, 33, 33, 1);
+    font-style: general sans;
+    text-align: start;
+    
+  }
