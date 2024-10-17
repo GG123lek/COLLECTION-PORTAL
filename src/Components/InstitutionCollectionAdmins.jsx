@@ -107,8 +107,8 @@ function InstitutionCollectionAdmins() {
         </div>
 
         <div>
-          <div className="sultab">
-            <table className="tabs">
+          <div className="sultabo">
+            <table className="tabso">
               <thead>
                 <tr>
                   <th>Name</th>

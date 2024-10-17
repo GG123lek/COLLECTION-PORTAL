@@ -1,0 +1,28 @@
+.tabs{
+    width:100%;
+    padding: 30px;
+    border-collapse: collapse;
+    background-color:;
+  }
+  
+  .sultab th{
+    border: 1px soid green;
+    color: blue;
+    font-size: 14px;
+    align-items: center;
+    border: none;
+    padding: 10px;
+    background: red;
+  }
+  .sultab tr:nth-child(odd){
+  
+  
+  }
+  .sultab td{
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+    color: rgba(33, 33, 33, 1);
+    font-style: general sans;
+    
+  }  

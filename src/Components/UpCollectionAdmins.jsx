@@ -53,8 +53,8 @@ function UpCollectionAdmins() {
   return (
     <>
         
-     <div className="sultab">
-            <table className="tabs">
+     <div className="sultabl">
+            <table className="tabsl">
               <thead>
                 <tr>
                   <th>Name</th>

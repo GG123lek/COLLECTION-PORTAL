@@ -9,7 +9,7 @@ const NestedModalTwo = ({ isOpen, onClose, onNavigateAway }) => {
         adminEmail: '',
         adminRole: ''
     });
-    const [activeModal, setActiveModal] = useState('form'); // Track the active modal
+    const [activeModal, setActiveModal] = useState('form'); 
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -18,20 +18,18 @@ const NestedModalTwo = ({ isOpen, onClose, onNavigateAway }) => {
 
     const handleCreate = () => {
         if (Object.values(formData).every(field => field.trim() !== '')) {
-            setActiveModal('new'); // Switch to new modal
+            setActiveModal('new'); 
         } else {
             alert("Please fill in all fields.");
         }
     };
 
-    // const handleCloseNewModal = () => {
-    //     setActiveModal('final'); // Switch to final modal after new modal
-    // };
+   
 
     const handleCloseFinalModal = () => {
-        setActiveModal('form'); // Reset to the form modal
-        onClose(); // Close the parent modal
-        onNavigateAway(); // Navigate away from the page
+        setActiveModal('form'); 
+        onClose(); 
+        onNavigateAway(); 
     };
 
     if (!isOpen) return null;
@@ -105,7 +103,7 @@ const NestedModalTwo = ({ isOpen, onClose, onNavigateAway }) => {
                   contain their usersname and a One time password to access
                   their account.
                 </h4>
-                        {/* <button onClick={handleCloseNewModal}>Continue</button> */}
+                       
                         <button onClick={handleCloseFinalModal}>Close</button>
                     </>
                 )}

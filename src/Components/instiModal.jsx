@@ -1,105 +1,124 @@
-
-import { IoMdCloseCircleOutline, IoMdCloudUpload } from "react-icons/io";
+import  { useState } from 'react';
+import { IoMdCloseCircleOutline } from "react-icons/io"; 
+import { AiOutlineUpload } from "react-icons/ai";
+import nestedmodalimage from "../assets/Images/nestedmodalimage.png";
+import nestedcircleimage from "../assets/Images/nestedcircleimage.png"
 import './InstiModal.css'; 
-import { useState } from "react";
-import BillerModal from "./BillerModal";
 
-const InstiModal = ({ isOpen, onClose,}) => {
-  if (!isOpen) return null;
-  const handleUpload = () => {
-    // Logic to handle file upload can go here
-    console.log('Upload button clicked');
-  };
-  const [selectedRadio, setSelectedRadio] = useState("");
-  const [isBillerModalOpen, setBillerModalOpen] = useState(false);
-  const [isAnotherModalOpen, setAnotherModalOpen] = useState(false);
+const InstiModal = ({ onClose }) => {
+  const [currentModal, setCurrentModal] = useState(1);
+  const [selectedBigRadio, setSelectedBigRadio] = useState("");
 
-  const handleDownload = () => {
-    
-    const link = document.createElement('a');
-    link.href = 'path_to_logo_image.png'; 
-    link.download = 'logo.png'; // Th
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const proceedToNextModal = () => {
+    setCurrentModal((prev) => prev + 1);
   };
+ 
   const handleRadioChange = (e) => {
-    setSelectedRadio(e.target.value);
+    setSelectedBigRadio(e.target.value);
   };
-  const handleProceed = () => {
-    setBillerModalOpen(true); // Open the new modal
-  };
-  const openAnotherModal = () => {
-    setAnotherModalOpen(true);
-  };
-
   return (
     <div className="modal-overlay">
+       
       <div className="modal-content">
-        <div className="modal-header">
-          <p style={{color:'black',fontSize:'20px',fontWeight:'bold'}}>Create Institution</p>
-          <IoMdCloseCircleOutline 
-            style={{ color: 'pink', fontSize: '24px', cursor: 'pointer' }} 
-            onClick={onClose} 
-          />
-        </div>
-        <div className="modal-body">
-        <div>
+       
+       
+        {currentModal === 1 && (
+          <div>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+            <p style={{color:'black',fontSize:'20px',fontWeight:'bold'}}>Create Institutions</p>
+            <IoMdCloseCircleOutline onClick={onClose} style={{color:'pink',fontSize:'30px'}}/>
+            </div>
             <p style={{ color: 'black' }}>Add Logo</p>
-            {/* <button onClick={handleUpload} style={{ display: 'flex', alignItems: 'center' }}>
-              <IoMdCloudUpload style={{ marginRight: '8px' }} />
-              Upload Logo
-            </button> */}
-            <button onClick={handleDownload} style={{ backgroundColor:'#D1D1D1',width:'35%', display:'flex',alignItems:'center',gap:'10px',flexDirection:'row-reverse'}}>
-              Upload Logo
-              <IoMdCloudUpload/>
-            </button>
+            <div style={{border:'none',width:'40%'}}> 
+            <div style={{ border: 'none', width: '100%' }}>
+             <a href="/path/to/your/file.jpg" download style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', backgroundColor: '#D1D1D1', textDecoration: 'none', padding: '10px', borderRadius: '5px' }}>
+             <AiOutlineUpload style={{ color: 'black', cursor: 'pointer' }} />
+             <p style={{color:'black'}}>Upload Logo</p>
+             </a>
+            </div>
+            </div>
+            <p style={{color:'black'}}> Name of Institution </p>
+            <input name='text' placeholder='First Bank Nigeria' style={{outline:'none'}}/>
+            <p style={{color:'black'}}>Abbreviations</p>
+            <input name='text' placeholder='FBN' style={{outline:'none'}}/>
+            <p style={{color:'black'}}>Institutions Emails</p>
+            <input name='text' placeholder='you can pick from existing institutions or kindly type a new one'style={{outline:'none'}}/>
+            <p style={{color:'black'}}>Institutions Code</p>
+            <input name='text' placeholder='Enter your code' style={{outline:'none'}}/>
+            <p style={{color:'black'}}>Sign up for Core-banking Application (CBA)</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', margin: '10px 0' }}>
+            <label style={{ display: 'flex', alignItems: 'center', color: 'black' }}>
+                <input type="radio" name="cbaSignup" value="option1"  checked={selectedBigRadio === "option1"} onChange={handleRadioChange} style={{ marginRight: '5px',}} />
+                Yes
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', color: 'black' }}>
+                <input type="radio" name="cbaSignup" value="option2" checked={selectedBigRadio === "option2"}  onChange={handleRadioChange}style={{ marginRight: '5px' }} />
+                No
+            </label>
+           </div>
+            <button onClick={proceedToNextModal}>Proceed</button>
           </div>
-
+         
+       
+         
           
-        <p style={{ color: 'black' }}>Institution Name</p>
-          <input type="text" placeholder="First Bank of Nigeria"/>
-          
-          <p style={{ color: 'black' }}>Abbreviation</p>
-          <input type="text" placeholder="FBN"/>
-          
-          <p style={{ color: 'black' }}>Email Address</p>
-          <input type="email" placeholder="firstbanknigeria@uk.com.ng" />
-          
-          <p style={{ color: 'black' }}>Institution Code</p>
-          <input type="text" placeholder="Enter your code"/> 
-
-          <p style={{color:'black'}}>Sign up for Core-banking Application(CBA)</p>
-          <div className="radio-buttons">
-                  <label>
-                   <div style={{display:'flex'}}>
-                   <input
-                      type="radio"
-                      value="option1"
-                      checked={selectedRadio === "option1"}
-                      onChange={handleRadioChange}
-                    />
-                    <p style={{color:'black'}}>Yes</p>
-                   </div>
-                  </label>
-                  <label>
-                   <div style={{display:'flex'}}>
-                   <input
-                      type="radio"
-                      value="option2"
-                      checked={selectedRadio === "option2"}
-                      onChange={handleRadioChange}
-                    />
-                    <p style={{color:'black'}}>No</p>
-                   </div>
-                  </label>
+        )}
+        {currentModal === 2 && (
+          <div>
+           <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+            <div>
+            <p style={{color:'black',fontSize:'20px',fontWeight:'bold'}}>Select Billers</p>
+            <p style={{color:'#757575',fontSize:'15px',fontWeight:'bold'}}>Select from the list of billers provided below</p>
+            </div>
+           <IoMdCloseCircleOutline onClick={onClose} style={{color:'pink',fontSize:'30px'}}/>
+           </div>
+           <div>
+                {" "}
+                {[
+                    "Federal Road Safety Corps (FRSC)",
+                    "Obafemi Awolowo University, Ife(OAU)",
+                    "Nigeria Port Authority(NPA)",
+                    "Federal Inland Revenue Service(FIRS)",
+                    "University Of Lagos(UNILAG)",
+                    "Nigeria Immigration Services(NIS)",
+                    "West Africa Examination Council(WAEC)",
+                    "DSTV",
+                ].map((biller, index) => (
+                    <div key={index} style={{display: "flex", gap: "10px",alignItems:'center',padding:'5px'}}>
+                    <div>
+                        <input type="checkbox"/>
+                    </div>
+                    <div>
+                        <p style={{ color: "black" }}>{biller}</p>
+                    </div>
+                    </div>
+                ))}
+                </div>
+            <button onClick={proceedToNextModal}>Proceed</button>
           </div>
-        </div>
-        
-          <button onClick={handleProceed} style={{padding:'10px'}} >Proceed</button>
-        
+        )}
+        {currentModal === 3 && (
+          <div>
+            <div>
+            <div>
+            <img src={nestedmodalimage} alt=''/>
+            </div>
+            <div>
+            <img src={nestedcircleimage} alt=''/>
+            </div>
+            <p style={{color:'#516B91',textAlign:'center',fontSize:'16px',fontWeight:'bold'}}>Institution successfully created.</p>
+                <p style={{color:'#676363',textAlign:'center',fontSize:'10px'}}>
+                  A mail have been sent to the institution email which will
+                  contain their usersname and a One time password to access
+                  their account.
+                </p>
+            </div>
+           
+
+            <button onClick={onClose}>Close</button>
+          </div>
+        )}
       </div>
-      <BillerModal isOpen={isBillerModalOpen} closeModal={() => setBillerModalOpen(false)} openAnotherModal={openAnotherModal}/>
     </div>
   );
 };

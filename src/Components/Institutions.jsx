@@ -12,6 +12,7 @@ import InstiModal from './instiModal';
 import { PiPencilSimpleLine } from "react-icons/pi";
 
 
+
 function Institution() {
  
   const info = [
@@ -108,11 +109,17 @@ function Institution() {
     },
   ];
 
-  const [isModalOpen, setModalOpen] = useState(false);
+ 
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
-  const handleAddInstitutionClick = () => {
-    setModalOpen(true);
+  const openModal = () => {
+    setIsModalOpen(true);
   };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  
   return (
     <Layout>
       <>
@@ -141,7 +148,7 @@ function Institution() {
               <p style={{ color: 'black', fontSize: '20px', fontWeight: 'bold' }}>Institutions</p>
               <p style={{ color: 'black' }}> Here is the list of all the institutions created by the super administrator</p>
             </div>
-            <div className="circlearrowinflex" onClick={handleAddInstitutionClick}>
+            <div className="circlearrowinflex" style={{cursor:'pointer'}} onClick={openModal} >
               <img src={insticircle} alt="" />
               <p className="circlearrowtext">Add New Institution</p>
             </div>
@@ -150,8 +157,8 @@ function Institution() {
           <div>
             <p style={{ color: 'black', fontSize: '17px', fontWeight: 'bold', padding: '20px' }}>Approved Institutions</p>
           </div>
-          <div className="sultab">
-            <table className="tabs">
+          <div className="sultabt">
+            <table className="tabst">
               <thead>
                 <tr>
                   <th>Institutions</th>
@@ -209,7 +216,7 @@ function Institution() {
             </div>
           </div>
         </div>
-        <InstiModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+        {isModalOpen && <InstiModal onClose={closeModal} />}
       </>
     </Layout>
   );

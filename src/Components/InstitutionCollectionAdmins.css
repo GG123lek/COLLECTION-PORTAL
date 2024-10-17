@@ -4,7 +4,7 @@
   font-weight: bold;
   color: black;
 }
-.tabs{
+.tabso{
   width:100%;
   padding: 30px;
   border-collapse: collapse;
@@ -12,23 +12,23 @@
   
 }
 
-.sultab th{
+.sultabo th{
   border: 1px soid green;
   color: blue;
   font-size: 14px;
-  align-items: center;
+  text-align: start;
   border: none;
   background-color: white;
   padding: 10px;
   
 }
-.sultab tr:nth-child(odd){
+.sultabo tr:nth-child(odd){
   background-color:rgb(250, 245, 245) ;
 
 }
-.sultab td{
+.sultabo td{
   font-size: 14px;
-  text-align: center;
+  text-align: start;
   padding: 8px;
   color: rgba(33, 33, 33, 1);
   font-style: general sans;

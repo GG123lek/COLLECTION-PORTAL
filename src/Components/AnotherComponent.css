@@ -1,0 +1,50 @@
+
+  
+ 
+  
+  .back-button img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+  }
+  
+  .sultab th{
+    border: 1px soid green;
+    color: blue;
+    font-size: 14px;
+    align-items: center;
+    border: none;
+    padding: 13px;
+    
+  }
+  .sultab tr:nth-child(odd){
+    background-color:rgb(250, 245, 245) ;
+  
+  }
+  .sultab td{
+    font-size: 14px;
+    text-align: center;
+    padding: 13px;
+    color: rgba(33, 33, 33, 1);
+    font-style: general sans;
+    align-items: flex-start;
+    
+  }
+  .tabs{
+    width:100%;
+    padding: 10px;
+    border-collapse: collapse; 
+  }
+  .smallflterbody{
+    border: 1px solid orangered;
+    padding: 10px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    border: none;
+  }
+ .search-container{
+  border: none;
+ }

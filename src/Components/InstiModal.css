@@ -1,53 +1,20 @@
 .modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background: white;
-    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: white;
     padding: 20px;
-    width: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .modal-footer {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .radio-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-right: 70%;
-  }
-  
-  .radio-buttons label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  .radio-buttons input[type="radio"] {
-    margin-right: 5px;
-  }
+    border-radius: 8px;
+    text-align: center;
+    width: 400px; 
+}
+

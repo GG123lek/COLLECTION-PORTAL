@@ -309,8 +309,8 @@ function Dashboard() {
                    
               </div>
       <div>
-      <div className='sultab'>
-          <table className='tabs'>
+      <div className='sultabs'>
+          <table className='tabss'>
         <thead>
           <tr>
             <th>Order ID</th>

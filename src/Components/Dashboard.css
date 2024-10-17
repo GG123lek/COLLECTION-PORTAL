@@ -74,14 +74,14 @@
     font-size: 15px;
     color: rgba(49, 49, 49, 1);
  }
- .tabs{
+ .tabss{
     width:100%;
     padding: 30px;
     border-collapse: collapse;
     
   }
   
-  .sultab th{
+  .sultabs th{
     border: 1px soid green;
     color: blue;
     font-size: 14px;
@@ -91,11 +91,11 @@
     padding: 10px;
     
   }
-  .sultab tr:nth-child(odd){
+  .sultabstr:nth-child(odd){
     background-color:rgb(250, 245, 245) ;
   
   }
-  .sultab td{
+  .sultabs td{
     font-size: 14px;
     text-align: center;
     padding: 8px;
