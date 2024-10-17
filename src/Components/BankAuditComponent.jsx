@@ -19,33 +19,28 @@ function BankAuditComponent({ onBack }) {
     ]
   return (
     <>
-    <div style={{paddingTop:'10px'}}>
-    <div>
+   
     
- <div style={{margin:'10px'}}> 
-  <div style={{margin:'10px'}}>
-    <div>
+    
+ 
+   
+    <div style={{padding:'30px'}}>
       <img src={usersarrowcoloreds} alt='' onClick={onBack} style={{width:'40px'}}/>
     </div>
 
        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',}}>
-       <div>
-        <p style={{fontWeight:'bold',fontSize:'25px'}}>UP Audit</p>
+       <div style={{padding:'30px'}}>
+        <p style={{fontWeight:'bold',fontSize:'25px',color:'black'}}>UP Audit</p>
        </div>
-  </div>
-      </div> 
-      </div>
     </div>
-     <br/>
-     
-      <div style={{borderBottom:'1px solid rgba(238, 238, 238, 1)'}}>
-
-     </div>
-     <br/>
+    
+      
+  
+    
      
      
-                  <div className="sultab">
-                    <table className="tabs">
+                  <div className="sultabx">
+                    <table className="tabsx">
                       <thead>
                         <tr>
                           <th>Name</th>
@@ -67,20 +62,10 @@ function BankAuditComponent({ onBack }) {
                   </div>
                
     
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <div style={{padding:'30px'}}>
+    
+    
       
-                    <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                    <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'150px'}}>
                       <div>
                            {/* <p style={{fontSize:'20px',color:' rgba(33, 33, 33, 1)',fontWeight:'bold'}}>Showing 1 to 10 of 100 enteries</p> */}
                       </div>
@@ -90,7 +75,7 @@ function BankAuditComponent({ onBack }) {
                           Prev
                         </div>
                          <div style={{position:'relative',bottom:'20px'}}>
-                         <span style={{border:'1px solid rgba(238,238,238,1)', padding:'10px',borderRadius:'5px'}}>1</span>
+                         <span style={{border:'1px solid rgba(238,238,238,1)', padding:'10px',borderRadius:'5px',color:'black'}}>1</span>
                          </div>
                         <div style={{display:"flex",flexDirection:"column", alignItems:"center", gap:"8px"}}>
                          <img src={auditimage} alt=''/>
@@ -98,8 +83,8 @@ function BankAuditComponent({ onBack }) {
                        </div>
                       </div>
                     </div>
-                    </div>
-    </div>
+   
+   
     
    
     </>

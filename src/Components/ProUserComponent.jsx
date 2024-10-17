@@ -23,35 +23,51 @@ function ProUserComponent({ onBack }) {
             InstitutionID:"011",
             DateCreated:"24-05-2022",
         },
+        {
+          Name:"Kolade Peters O.",
+          EmailAddress:"koladepeters@email.com",
+          Institution:"Guaranty Trust Bank PLC",
+          InstitutionID:"058",
+          DateCreated:"24-05-2022",   
+      },
+      {
+        Name:"Boluwatife Ojo P.",
+        EmailAddress:"boluwatife@email.com",
+        Institution:"First City Monument Bank PLC",
+        InstitutionID:"214",
+        DateCreated:"14-03-2022",   
+      },
+      {
+        Name:"Tomiwa Adeleke A.",
+        EmailAddress:"tomiwa@email.com",
+        Institution:"First Bank of Nigeria PLC",
+        InstitutionID:"011",
+        DateCreated:"14-03-2022",   
+      },
      
     ]
   return (
     <>
-    <div style={{paddingTop:'10px'}}>
-    <div>
+    
+    
     
  <div style={{margin:'10px'}}> 
-    <div>
+    <div style={{padding:'30px'}}>
       <img src={usersarrowcoloreds} alt='' onClick={onBack} style={{width:'40px'}}/>
     </div>
 
        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',}}>
-       <div>
-        <p style={{fontWeight:'bold',fontSize:'25px'}}>Processor Admin</p>
+       <div style={{padding:'30px'}}>
+        <p style={{fontWeight:'bold',fontSize:'25px',color:'black'}}>Processor User</p>
        </div>
       
       </div> 
-      </div>
-    </div>
-     <br/>
+ </div>
+  
      
-      <div style={{borderBottom:'1px solid rgba(238, 238, 238, 1)'}}>
-
-     </div>
-     <br/>
    
-                  <div className="sultab">
-                    <table className="tabs">
+                  <div className="sultabx">
+                    <table className="tabsx">
                       <thead>
                         <tr>
                           <th>Name</th>
@@ -80,19 +96,9 @@ function ProUserComponent({ onBack }) {
                   </div>
               
     
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <div style={{padding:'30px'}}>
-                    <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                 <br/>
+    
+                    <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'30px'}}>
                       <div>
                            {/* <p style={{fontSize:'20px',color:' rgba(33, 33, 33, 1)',fontWeight:'bold'}}>Showing 1 to 10 of 100 enteries</p> */}
                       </div>
@@ -102,7 +108,7 @@ function ProUserComponent({ onBack }) {
                           Prev
                         </div>
                          <div style={{position:'relative',bottom:'20px'}}>
-                         <span style={{border:'1px solid rgba(238,238,238,1)', padding:'10px',borderRadius:'5px'}}>1</span>
+                         <span style={{border:'1px solid rgba(238,238,238,1)', padding:'10px',borderRadius:'5px',color:'black'}}>1</span>
                          </div>
                         <div style={{display:"flex",flexDirection:"column", alignItems:"center", gap:"8px"}}>
                           <img src={auditimage} alt=''/>
@@ -110,8 +116,7 @@ function ProUserComponent({ onBack }) {
                        </div>
                       </div>
                     </div>
-                    </div>
-    </div>
+                  
     
    
     </>

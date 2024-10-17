@@ -1,0 +1,66 @@
+
+  
+ 
+  
+  .back-button img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    
+  }
+  
+  .tabxr {
+    margin-top: 20px;
+}
+
+.sultabx {
+    overflow-x: auto; /* For responsiveness */
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders */
+    
+}
+
+.sultabx tr:nth-child(odd){
+  
+
+}
+
+th, td {
+    border: none;
+    padding: 10px; /* Add padding for better spacing */
+    text-align: left; /* Align text to the left */
+    color: black;
+}
+
+th {
+    font-weight: bold; /* Bold header text */
+    color: blue;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Space between table and arrows */
+}
+
+.arrow-button {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer; /* Pointer on hover */
+}
+
+.page-number {
+    border: 1px solid rgba(238, 238, 238, 1);
+    padding: 10px;
+    border-radius: 5px;
+}
