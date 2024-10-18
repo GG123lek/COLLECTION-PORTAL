@@ -119,7 +119,7 @@ function AnotherComponent({ onBack }) {
     <>
    
 
-        <div style={{padding:'20px',}}>
+        <div>
         <div style={{padding:'30px'}}>
           <img src={usersarrowcoloreds} alt='' onClick={onBack} style={{width:'40px'}}/>
         </div>
@@ -172,7 +172,7 @@ function AnotherComponent({ onBack }) {
                       </tbody>
                     </table>
          </div>
-        <br/>
+      
          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',padding:'30px'}}>
                       <div>
                            {/* <p style={{fontSize:'20px',color:' rgba(33, 33, 33, 1)',fontWeight:'bold'}}>Showing 1 to 10 of 100 enteries</p> */}
@@ -191,8 +191,8 @@ function AnotherComponent({ onBack }) {
                        </div>
                       </div>
             </div>
-        </div>
-    
+        
+         </div>
     
     
                  

@@ -82,9 +82,9 @@ function EmptyComponent({ onBack }) {
   return (
     <>
    
-   <div style={{padding:'20px'}}>
+   
 
-   <div style={{display:'flex',flexDirection:'column',gap:'10px',}}>
+   <div style={{display:'flex',flexDirection:'column',gap:'20px',padding:'30px'}}>
     
     <div>
       <img src={usersarrowcoloreds} alt='' onClick={onBack} style={{width:'40px'}}/>
@@ -124,7 +124,7 @@ function EmptyComponent({ onBack }) {
                     </div>
     </div>
     <br/>
-    <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',padding:'20px'}}>
+    <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',padding:'30px'}}>
                     
                     <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'20px',}}>
                       <div style={{display:"flex", alignItems:"center",flexDirection:"column", gap:"8px"}}>
@@ -142,7 +142,7 @@ function EmptyComponent({ onBack }) {
 
    </div>
        
-   </div>
+   
    
     
     
