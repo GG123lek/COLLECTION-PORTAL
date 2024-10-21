@@ -1,0 +1,8 @@
+ .dropdownButtonStyle{
+    width: '100%';
+    border: 'none';
+    padding: '10px';
+    text-align: 'left';
+    cursor: 'pointer';
+    transition: 'background 0.3s';
+};

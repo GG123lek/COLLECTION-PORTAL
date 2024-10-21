@@ -88,7 +88,7 @@ function CollectionCircleChart() {
   return (
     <div>
         <div id="chart">
-      <ReactApexChart options={options} series={series} type="radialBar" height={350} />
+      <ReactApexChart options={options} series={series} type="radialBar" height={200} />
     </div>
     </div>
   )
