@@ -11,14 +11,15 @@ import pluscollect from "../assets/Images/pluscollection.svg"
 import peoplecol from "../assets/Images/peoplecol.svg"
 import cardtick from "../assets/Images/cardtick.svg"
 import textarrows from "../assets/Images/arrowgreen.svg"
-
 import "./Dashboard.css"
 import DashboardChartOne from "./DashboardChartOne";
 import CollectionCircleChart from "./ColllectionCircleChart";
 import CollectionProgressBar from "./CollectionProgressBar";
 import CollectionActiveBar from "./CollectionActiveBar";
 import CollectionMainBar from "./CollectionMainBar";
-import { useState,useEffect } from "react";
+import { useState,useEffect,} from "react";
+import { useNavigate } from "react-router-dom";
+
 function Dashboard() {
 
 
@@ -35,10 +36,17 @@ function Dashboard() {
 
 
 
-
+  const navigate = useNavigate();
 
 
   const [progress, setProgress] = useState(0);
+  const makesContainerClick = () => {
+    navigate('/users');
+  }
+
+  const handlesContainerClick = () => {
+    navigate('/billers',); // 
+  };
 
   
   useEffect(() => {
@@ -48,7 +56,8 @@ function Dashboard() {
         prevProgress >= 100 ? 0 : prevProgress + 10
       );
     }, 1000);
-
+ 
+   
    
 
     return () => clearInterval(interval);
@@ -169,7 +178,7 @@ function Dashboard() {
       </div>
     </div>
    
-    <div style={{border:'none',width:'25%',borderRadius:'20px',backgroundColor:'white',height:'400px'}}>
+    <div style={{border:'none',width:'25%',borderRadius:'20px',backgroundColor:'white',height:'400px'}} onClick={handlesContainerClick}>
       <div style={{display:'flex',flexDirection:'column',padding:'10px'}}>
       <p style={{color:'black',fontWeight:'bold',fontSize:'20px'}}>Billers</p>
       <p style={{color:'#ACACAC'}}>Billers that join over the Month</p>
@@ -182,7 +191,7 @@ function Dashboard() {
     <div style={{border:'none',width:'25%',borderRadius:'20px',backgroundColor:'white',height:'402px'}}>
      <div style={{display:'flex',justifyContent:'space-between',padding:'10px'}}>
       <p style={{color:'black',fontWeight:'bold',fontSize:'20px'}}>User Category</p>
-      <img src={pluscollect} alt=''/>
+      <img src={pluscollect} alt=''  onClick={makesContainerClick}/>
      </div>
      <br/>
      
