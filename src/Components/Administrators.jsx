@@ -78,6 +78,7 @@ const [MyOrders, setMyOrders] = useState();
                       <p
                         className="circlearrowtext"
                         onClick={() => setNestedOneOpen(true)}
+                        style={{cursor:'pointer'}}
                       >
                         New Administrator
                       </p>

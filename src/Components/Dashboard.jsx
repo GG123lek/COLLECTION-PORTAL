@@ -178,7 +178,7 @@ function Dashboard() {
       </div>
     </div>
    
-    <div style={{border:'none',width:'25%',borderRadius:'20px',backgroundColor:'white',height:'400px'}} onClick={handlesContainerClick}>
+    <div style={{border:'none',width:'25%',borderRadius:'20px',backgroundColor:'white',height:'400px',cursor:'pointer'}} onClick={handlesContainerClick}>
       <div style={{display:'flex',flexDirection:'column',padding:'10px'}}>
       <p style={{color:'black',fontWeight:'bold',fontSize:'20px'}}>Billers</p>
       <p style={{color:'#ACACAC'}}>Billers that join over the Month</p>
@@ -191,7 +191,7 @@ function Dashboard() {
     <div style={{border:'none',width:'25%',borderRadius:'20px',backgroundColor:'white',height:'402px'}}>
      <div style={{display:'flex',justifyContent:'space-between',padding:'10px'}}>
       <p style={{color:'black',fontWeight:'bold',fontSize:'20px'}}>User Category</p>
-      <img src={pluscollect} alt=''  onClick={makesContainerClick}/>
+      <img src={pluscollect} alt='' style={{cursor:'pointer'}} onClick={makesContainerClick}/>
      </div>
      <br/>
      
@@ -267,7 +267,6 @@ function Dashboard() {
           border: 'none',
           gap: '10px',
           width: '46%',
-          padding: '10px',
           borderRadius: '5px',
           backgroundColor: '#F8FDFF'
         }}>

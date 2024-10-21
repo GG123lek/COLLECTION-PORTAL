@@ -55,7 +55,7 @@ function Transactions() {
                     <div   onClick={() => {
                           setMyTrans(!MyTrans);
                         }} style={{border:'1px solid orangered',display:'flex',alignItems:'center',gap:'10px',
-                         padding:'5px',background:'white',justifyContent:'center',width:'100px',borderRadius:'5px' }}>
+                         padding:'5px',background:'white',justifyContent:'center',width:'100px',borderRadius:'5px',cursor:'pointer' }}>
                          <p style={{color:'orangered'}}>Filter</p>
                          <IoFilterSharp style={{color:'orangered'}}/>
                     </div>
