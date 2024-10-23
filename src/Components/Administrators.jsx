@@ -90,6 +90,7 @@ const [MyOrders, setMyOrders] = useState();
                     <p
                       className="circlearrowtext"
                       onClick={() => setNestedTwoOpen(true)}
+                      style={{cursor:'pointer'}}
                     >
                       New UP Administrator
                     </p>

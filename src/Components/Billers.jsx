@@ -7,6 +7,7 @@ import collectionarrowtwo from "../assets/Images/arrowrightcircle.png";
 import { useState } from "react";
 
 import "./Billers.css";
+import CollectionSignUp from "./CollectionSignUp";
 function Billers() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Sort By");
@@ -248,6 +249,7 @@ DateCreated:'14-03-2022',
                     </div>
         </div>
       </div>
+    
     </Layout>
   );
 }

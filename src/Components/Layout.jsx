@@ -9,7 +9,6 @@ function Layout({children}) {
       </div>
       <div style={{width:'80%',backgroundColor:'#FBFBFB'}}>
        {children}
-      
       </div>
     </div>
   )

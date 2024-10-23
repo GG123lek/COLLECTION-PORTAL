@@ -1,0 +1,41 @@
+.signup-container {
+    width: 100%;
+    text-align: center; /* Center text in the container */
+  }
+  
+  .input-background {
+    background-color: #f0f0f0; /* Change this to your preferred background color */
+    padding: 20px; /* Add some padding */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  }
+  
+  input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Add some padding */
+    margin: 10px 0; /* Space between inputs */
+    border: 1px solid #ccc; /* Input border */
+    border-radius: 4px; /* Rounded edges */
+    width: 50%;
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 15px; /* Button padding */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded edges */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer on hover */
+    width: 50%;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker on hover */
+  }
+  
+  .error {
+    color: red; /* Error text color */
+    margin: 10px 0; /* Space above/below */
+  }
+  
