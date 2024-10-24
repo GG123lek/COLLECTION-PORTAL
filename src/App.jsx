@@ -18,7 +18,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<CollectionSignUp />} />
-          <Route path="/forgetpassword" element={<ForgetPassword />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/otpverification" element={<OTPVerification />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/administrators" element={<Administrators />} />

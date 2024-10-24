@@ -150,6 +150,7 @@ DateCreated:'14-03-2022',
                   width: "100%",
                   borderRadius: "5px",
                   backgroundColor: "white",
+                  paddingLeft:'10px'
                 }}
               >
                 <IoIosSearch style={{ color: "red" }} />

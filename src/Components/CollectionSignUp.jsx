@@ -82,12 +82,12 @@ function CollectionSignUp({ children }) {
                 onChange={(e) => setPassword(e.target.value)}
               />
               {error && <p className="error">{error}</p>}
-              <button type="submit" disabled={loading}>
+              <button type="submit" disabled={loading} >
                 {loading ? 'Logging In...' : 'Log In'}
               </button>
             </form>
             <p>
-              <a href="/forgot-password">Forgot Password?</a>
+              <a href="/forget-password" style={{textDecoration:'none',color:'#FF993A'}}>Forget Password?</a>
             </p>
           </div>
         </div>

@@ -41,7 +41,7 @@ function DownloadComponent() {
                     background: '#00B3FE',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    justifyContent: 'space-between',
                     gap: '10px',
                     outline: 'none',
                     border: 'none',
@@ -52,6 +52,7 @@ function DownloadComponent() {
                     cursor: 'pointer',
                     fontSize: '16px', // Increase font size for better readability
                     transition: 'background 0.3s',
+                    width:'100%'
                 }}
             >
                 <p style={{ color: 'white' }}>Download Report</p>

@@ -46,16 +46,16 @@ function Transactions() {
           <p style={{color:'black',fontSize:'20px',fontWeight:'bold'}}>Transactions</p>
           </div>
         
-         <div style={{display:'flex',gap:'20px'}}>
-                <div style={{border:'1px solid #CCCCCC', display:'flex',alignItems:'center',
-                 justifyContent:'center',height:'35px',width:'320px',borderRadius:'5px'}}>
-                 <FaSearch/>
+            <div style={{display:'flex',gap:'20px'}}>
+                <div style={{border:'1px solid #CCCCCC', display:'flex',
+                 width:'320px',borderRadius:'5px',alignItems:'center',paddingLeft:'10px'}}>
+                 <FaSearch style={{color:'red',}}/>
                 <input type="text" placeholder="Search by Bank, Branch, Email, Name, Branch Code e.t.c." style={{border:'none',backgroundColor:'transparent'}}/>
                </div>
-                    <div   onClick={() => {
+                    <div className="bok"  onClick={() => {
                           setMyTrans(!MyTrans);
                         }} style={{border:'1px solid orangered',display:'flex',alignItems:'center',gap:'10px',
-                         padding:'5px',background:'white',justifyContent:'center',width:'100px',borderRadius:'5px',cursor:'pointer' }}>
+                         padding:'5px',background:'white',justifyContent:'center',width:'100px',borderRadius:'5px',cursor:'pointer',}}>
                          <p style={{color:'orangered'}}>Filter</p>
                          <IoFilterSharp style={{color:'orangered'}}/>
                     </div>

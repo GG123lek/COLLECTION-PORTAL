@@ -28,3 +28,6 @@
     font-style: general sans;
     
   }
+  .bok::placeholder{
+    margin-left: 100px;
+  }

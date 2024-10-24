@@ -265,10 +265,10 @@ function Dashboard() {
           display: 'flex',
           alignItems: 'center',
           border: 'none',
-          gap: '10px',
           width: '46%',
           borderRadius: '5px',
-          backgroundColor: '#F8FDFF'
+          backgroundColor: '#F8FDFF',
+          paddingRight:'10px'
         }}>
           <IoIosSearch style={{ color: 'red' }} />
           <input
