@@ -42,20 +42,20 @@ const NestedModal = ({ isOpen, onClose, onNavigateAway }) => {
                         <span className="close" onClick={handleCloseSecondModal}>
                             <IoMdCloseCircleOutline />
                         </span>
-                        <div>
+                        <div style={{textAlign:'center'}}>
                         <img src={nestedmodalimage} alt="" />
                         </div>
-                       <div>
+                       <div style={{textAlign:'center'}}>
                        <img src={nestedcircleimage} alt="" />
                        </div>
                      
-                <p style={{color:'#516B91',fontSize:'15px'}}>Administrator successfully created.</p>
-                <h4 style={{color:'#676363',fontSize:'10px'}}>
+                <p style={{color:'#516B91',fontSize:'15px',textAlign:'center'}}>Administrator successfully created.</p>
+                <h4 style={{color:'#676363',fontSize:'10px',textAlign:'center'}}>
                   A mail have been sent to the institution email which will
                   contain their usersname and a One time password to access
                   their account.
                 </h4>
-                        <button onClick={handleCloseSecondModal}>Close</button>
+                        <button onClick={handleCloseSecondModal} style={{width:'100%'}}>Close</button>
                     </div>
                 </div>
             ) : (
@@ -69,7 +69,7 @@ const NestedModal = ({ isOpen, onClose, onNavigateAway }) => {
                         </p>
                         <div>
                             <p style={{ color: 'black', fontSize: '15px' }}>Name of Institutions Administrators</p>
-                            <input 
+                            <input style={{width:'100%'}}
                                 type="text" 
                                 name="adminName"
                                 placeholder="Segun Peters James"
@@ -79,7 +79,7 @@ const NestedModal = ({ isOpen, onClose, onNavigateAway }) => {
                         </div>
                         <div>
                             <p style={{ color: 'black', fontSize: '15px' }}>Institution Administrator's Email</p>
-                            <input 
+                            <input style={{width:'100%'}}
                                 type="text" 
                                 name="adminEmail"
                                 placeholder="firstbanknigeria@uk.com.ng" 
@@ -89,7 +89,7 @@ const NestedModal = ({ isOpen, onClose, onNavigateAway }) => {
                         </div>
                         <div>
                             <p style={{ color: 'black', fontSize: '15px' }}>Name Of Institutions</p>
-                            <input 
+                            <input style={{width:'100%'}}
                                 type="text" 
                                 name="institutionName"
                                 placeholder="You can pick from existing institution or kindly type in a new one" 
@@ -99,7 +99,7 @@ const NestedModal = ({ isOpen, onClose, onNavigateAway }) => {
                         </div>
                         <div>
                             <p style={{ color: 'black', fontSize: '15px' }}>InstitutionID</p>
-                            <input 
+                            <input style={{width:'100%'}}
                                 type="text" 
                                 name="institutionID"
                                 placeholder="You can pick from existing institution or kindly type in a new one" 
@@ -108,7 +108,7 @@ const NestedModal = ({ isOpen, onClose, onNavigateAway }) => {
                             />
                         </div>
 
-                        <button onClick={handleCloseFirstModal}>Close</button>
+                        <button onClick={handleCloseFirstModal}style={{width:'100%',}}>Close</button>
                     </div>
                 </div>
             )}

@@ -96,7 +96,7 @@ function AuthoriserComponent({ onBack }) {
         <div style={{display:'flex', alignItems:'center',gap:'10px'}}>
       
         <div style={{border:'1px solid #CCCCCC', display:'flex',alignItems:'center',
-          justifyContent:'center',height:'35px',width:'320px',borderRadius:'5px'}}>
+          height:'35px',width:'320px',borderRadius:'5px',paddingLeft:'10px'}}>
           <FaSearch style={{color:'grey',}}/>
           <input type="text" placeholder="Search by Bank, Branch, Email, Name, Branch Code e.t.c." style={{border:'none',backgroundColor:'transparent'}}/>
         </div>

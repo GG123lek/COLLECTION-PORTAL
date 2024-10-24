@@ -38,13 +38,13 @@ const InstiModal = ({ onClose }) => {
             </div>
             </div>
             <p style={{color:'black'}}> Name of Institution </p>
-            <input name='text' placeholder='First Bank Nigeria' style={{outline:'none'}}/>
+            <input name='text' placeholder='First Bank Nigeria' style={{outline:'none',width:'100%'}}/>
             <p style={{color:'black'}}>Abbreviations</p>
-            <input name='text' placeholder='FBN' style={{outline:'none'}}/>
+            <input name='text' placeholder='FBN' style={{outline:'none',width:'100%'}}/>
             <p style={{color:'black'}}>Institutions Emails</p>
-            <input name='text' placeholder='you can pick from existing institutions or kindly type a new one'style={{outline:'none'}}/>
+            <input name='text' placeholder='you can pick from existing institutions or kindly type a new one'style={{outline:'none',width:'100%'}}/>
             <p style={{color:'black'}}>Institutions Code</p>
-            <input name='text' placeholder='Enter your code' style={{outline:'none'}}/>
+            <input name='text' placeholder='Enter your code' style={{outline:'none',width:'100%'}}/>
             <p style={{color:'black'}}>Sign up for Core-banking Application (CBA)</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', margin: '10px 0' }}>
             <label style={{ display: 'flex', alignItems: 'center', color: 'black' }}>
@@ -56,7 +56,7 @@ const InstiModal = ({ onClose }) => {
                 No
             </label>
            </div>
-            <button onClick={proceedToNextModal}>Proceed</button>
+            <button onClick={proceedToNextModal} style={{width:'100%'}}>Proceed</button>
           </div>
          
        
@@ -94,11 +94,11 @@ const InstiModal = ({ onClose }) => {
                     </div>
                 ))}
                 </div>
-            <button onClick={proceedToNextModal}>Proceed</button>
+            <button onClick={proceedToNextModal} style={{width:'100%'}}>Proceed</button>
           </div>
         )}
         {currentModal === 3 && (
-          <div>
+          <div style={{textAlign:'center'}}>
             <div>
             <div>
             <img src={nestedmodalimage} alt=''/>

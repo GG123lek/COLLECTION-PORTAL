@@ -47,7 +47,7 @@ const NestedModalTwo = ({ isOpen, onClose, onNavigateAway }) => {
                         <div>
                             <div>
                                 <p style={{ color: 'black', fontSize: '15px' }}>Name of Administrators</p>
-                                <input
+                                <input style={{width:'100%'}}
                                     type="text"
                                     name="adminName"
                                     placeholder="Temitope Ali"
@@ -57,7 +57,7 @@ const NestedModalTwo = ({ isOpen, onClose, onNavigateAway }) => {
                             </div>
                             <div>
                                 <p style={{ color: 'black', fontSize: '15px' }}>Email Address</p>
-                                <input
+                                <input style={{width:'100%'}}
                                     type="text"
                                     name="adminEmail"
                                     placeholder="alitemitope@gmail.com"
@@ -83,12 +83,12 @@ const NestedModalTwo = ({ isOpen, onClose, onNavigateAway }) => {
                                 </select>
                             </div>
                         </div>
-                        <button onClick={handleCreate}>Create</button>
+                        <button onClick={handleCreate} style={{width:'100%'}}>Create</button>
                     </>
                 )}
 
                 {activeModal === 'new' && (
-                    <>
+                    < div style={{textAlign:'center'}}>
                        
                         <div>
                         <img src={nestedmodalimage} alt="" />
@@ -97,15 +97,15 @@ const NestedModalTwo = ({ isOpen, onClose, onNavigateAway }) => {
                        <img src={nestedcircleimage} alt="" />
                        </div>
                      
-                <p style={{color:'#516B91',fontSize:'15px'}}>Administrator successfully created.</p>
+                <p style={{color:'#516B91',fontSize:'15px',textAlign:'center'}}>Administrator successfully created.</p>
                 <h4 style={{color:'#676363',fontSize:'10px'}}>
                   A mail have been sent to the institution email which will
                   contain their usersname and a One time password to access
                   their account.
                 </h4>
                        
-                        <button onClick={handleCloseFinalModal}>Close</button>
-                    </>
+                        <button onClick={handleCloseFinalModal} style={{width:'100%'}}>Close</button>
+                    </div>
                 )}
 
                 {activeModal === 'final' && (

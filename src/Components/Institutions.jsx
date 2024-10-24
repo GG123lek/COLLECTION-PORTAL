@@ -132,7 +132,7 @@ function Institution() {
             borderRadius: '5px',
             backgroundColor: 'white'
           }}>
-            <IoIosSearch style={{ color: 'red' }} />
+            <IoIosSearch style={{ color: 'grey' }} />
             <input name="text" placeholder="Search Anything...." style={{ border: 'none', backgroundColor: 'transparent', outline: 'none' }} />
           </div>
           <div>

@@ -153,7 +153,7 @@ DateCreated:'14-03-2022',
                   paddingLeft:'10px'
                 }}
               >
-                <IoIosSearch style={{ color: "red" }} />
+                <IoIosSearch style={{ color: "grey" }} />
                 <input
                   name="text"
                   placeholder="Search by Billers name,Date Created,Email e.t.c"

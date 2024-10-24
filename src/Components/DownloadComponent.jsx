@@ -66,7 +66,7 @@ function DownloadComponent() {
                     borderRadius: '4px',
                     marginTop: '',
                     zIndex: '1000',
-                    width:'100%'
+                    width:'200%'
                 }}>
                     <button onClick={() => handleDownload('pdf')}>Download PDF</button>
                     <button onClick={() => handleDownload('csv')}>Download CSV</button>
