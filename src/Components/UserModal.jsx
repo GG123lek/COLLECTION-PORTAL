@@ -23,10 +23,10 @@ const UserModal = ({ onClose }) => {
               <p style={{ color: 'black', fontSize: '20px', fontWeight: 'bold' }}>Create New User Category</p>
             </div>
             <p style={{ color: 'black' }}>Name of User Category</p>
-            <input name='text' placeholder='Processor users' />
+            <input name='text' placeholder='Processor users' style={{width:'100%'}}/>
             <p style={{ color: 'black' }}>Description</p>
-            <input name='text' placeholder='This session is Optional' />
-            <button onClick={proceedToNextModal}>Add New User Category</button>
+            <input name='text' placeholder='This session is Optional' style={{width:'100%'}} />
+            <button onClick={proceedToNextModal} style={{width:'100%'}}>Add New User Category</button>
           </div>
         )}
         
@@ -56,7 +56,7 @@ const UserModal = ({ onClose }) => {
                 </div>
               ))}
             </div> */}
-            <div>
+            <div style={{textAlign:'center'}}>
                 <div>
                 <img src={nestedmodalimage} alt=''/>
                 </div>
@@ -66,7 +66,7 @@ const UserModal = ({ onClose }) => {
                 <p style={{color:'#516B91',textAlign:'center',fontSize:'16px',fontWeight:'bold'}}>User Category successfully created.</p>
               
             </div>
-            <button onClick={onClose}>Close</button>
+            <button onClick={onClose} style={{width:'100%'}}>Close</button>
           </div>
         )}
       </div>
