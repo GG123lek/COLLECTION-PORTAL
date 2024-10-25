@@ -83,6 +83,7 @@ function ForgetPassword() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
+              <br/>
               {error && <p className="error">{error}</p>}
               <button type="submit" disabled={loading}>
                 {loading ? 'Resetting...' : 'Login'}
