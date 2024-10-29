@@ -85,7 +85,7 @@ function ForgetPassword() {
                 placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                style={{outline:'noneg'}}
+                style={{outline:'none'}}
               />
               <br/>
               {error && <p className="error">{error}</p>}
