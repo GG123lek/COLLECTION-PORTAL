@@ -1,16 +1,24 @@
-import signpics from "../assets/Images/Design.bcc353c50613eef92e57.gif";
+
 import "./CollectionSignUp.css";
 import { useState, useEffect } from "react";
 import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { IoIosSearch } from "react-icons/io";
+
 
 function CollectionSignUp({ children }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [agents, setAgents] = useState([]);
   const navigate = useNavigate();
+  const [agents, setAgents] = useState([]);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,10 +48,12 @@ function CollectionSignUp({ children }) {
       } else {
         const data = await response.json();
         console.log('Login successful:', data);
+  
         
-        localStorage.setItem('apiToken', data.token);
-        fetchAgents(data.token); 
-        navigate('/dashboard');
+        localStorage.setItem('apiToken', data.token); 
+  
+        
+         navigate('/dashboard');
       }
     } catch (err) {
       setError('An error occurred. Please try again.');
@@ -52,12 +62,12 @@ function CollectionSignUp({ children }) {
     }
   };
 
-  const fetchAgents = async (token) => {
+  const fetchAgents = async () => {
     try {
       const response = await fetch('http://tm30usermanagement.tm30.net/user/agents/all/?page=1', {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${token}`, 
+         
           'Content-Type': 'application/json',
         },
       });
@@ -75,49 +85,85 @@ function CollectionSignUp({ children }) {
     }
   };
 
+  useEffect(() => {
+    fetchAgents();
+  }, []); 
+
+  
+
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
-      <div style={{ padding: '20px' }}>
-        <img src={imageunifiedpicture} alt='' />
-      </div>
- 
       <div style={{ width: '50%', background: 'white' }}>
-      <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+        <img src={imageunifiedpicture} alt=''/>
         <div className="signup-container">
-          <div className="form-container">
-            <p style={{ color: 'blue', fontSize: '20px', fontWeight: 'bold' }}>Log In to Unified Payment</p>
+        <p style={{color:'blue',fontSize:'20px',position:'relative',left:'50px'}}>Sign Up Into Unified Payment</p>
+        <br/>
+        <div className="form-container">
+          
             <form onSubmit={handleSubmit}>
-              <input
+              {/* <input className="sesd"
                 type="email"
                 placeholder="Enter Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-              />
-              <br />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <br />
+                style={{outline:'none',background:'none',border:'1px solid grey'}}
+              /> */}
+           
+            
+                   {/* <div style={{display:'flex',alignItems:'center',justifyContent:'center',border:'1px solid grey',}}>
+                   <input
+                        type={showPassword ? 'text' : 'password'}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Enter your password"
+                        style={{ outline:'none',background:'none',border:'none',}}
+                     />
+                     {showPassword ? <FaEyeSlash  onClick={togglePasswordVisibility} style={{color:'red',}}/> : <FaEye  onClick={togglePasswordVisibility} style={{color:'red',}} />}
+             
+                   </div> */}
+                                  <div style={{
+                      display:'flex',
+                      alignItems:'center',
+                      border:'1px solid grey',
+                      width:'150%',
+                      borderRadius:'5px',
+                      backgroundColor:'white',
+                      padding:'5px',
+                    
+                  }}>
+                  {/* <IoIosSearch style={{color:'grey'}}/> */}
+                  <input name="text" placeholder="Enter your Email" value={email} onChange={(e)=>{setEmail(e.target.value)}} style={{border:'none', backgroundColor:'transparent',outline:'none'}}/>
+                  </div>
+                    
+                    <br/>
+
+                      <div style={{
+                display:'flex',
+                alignItems:'center',
+                border:'1px solid grey',
+                width:'150%',
+                borderRadius:'5px',
+                backgroundColor:'white',
+                flexDirection:'row-reverse',
+                padding:'5px',
+              
+              
+            }}>
+    {/* <IoIosSearch style={{color:'grey'}}/> */}
+    {showPassword ? <FaEyeSlash  onClick={togglePasswordVisibility} style={{color:'red',}}/> : <FaEye  onClick={togglePasswordVisibility} style={{color:'red',}} />}
+             
+    <input name="text" placeholder="Enter your password" onChange={(e)=>{setPassword(e.target.value)}} value={password}
+    type={showPassword ? "text" : "password"} style={{border:'none', backgroundColor:'transparent',outline:'none'}}/>
+    </div>
+    <br/>
               {error && <p className="error">{error}</p>}
-              <button type="submit" disabled={loading}>
+              <button style={{width:'150%'}} type="submit" disabled={loading} >
                 {loading ? 'Logging In...' : 'Log In'}
               </button>
             </form>
-            <br />
+           
             <p>
-              <a href="/forget-password" style={{ textDecoration: 'none', color: '#FF993A' }}>Forget Password?</a>
+              <a href="/forget-password" style={{textDecoration:'none',color:'#FF993A',position:'relative',left:"55px"}}>Forget Password?</a>
             </p>
           </div>
         </div>

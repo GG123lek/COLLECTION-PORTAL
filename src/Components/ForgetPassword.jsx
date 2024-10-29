@@ -61,6 +61,7 @@ function ForgetPassword() {
                 placeholder="Enter Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                style={{outline:'none'}}
               />
               <br />
               <input
@@ -68,6 +69,7 @@ function ForgetPassword() {
                 placeholder="Enter OTP"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
+                style={{outline:'none'}}
               />
               <br />
               <input
@@ -75,6 +77,7 @@ function ForgetPassword() {
                 placeholder="New Password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
+                style={{outline:'none'}}
               />
               <br />
               <input
@@ -82,6 +85,7 @@ function ForgetPassword() {
                 placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                style={{outline:'noneg'}}
               />
               <br/>
               {error && <p className="error">{error}</p>}
