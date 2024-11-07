@@ -247,7 +247,7 @@ function Dashboard() {
               </div>
         </div>
         
-        <p style={{color:"#F38231",textAlign:'center',position:'relative',bottom:'95px',fontWeight:'bold',fontSize:'20px'}}>View all</p>
+        <p style={{color:"#F38231",textAlign:'center',position:'relative',bottom:'140px',fontWeight:'bold',fontSize:'20px'}}>View all</p>
         
      </div>
      <div className="tablecontainerdashboard">

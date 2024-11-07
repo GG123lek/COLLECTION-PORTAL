@@ -82,12 +82,13 @@ const NestedModal = ({ isOpen, onClose, onNavigateAway }) => {
                         <div>
                             <p style={{ color: 'black', fontSize: '15px' }}>Institution Administrator's Email</p>
                             <input
-                                style={{ width: '100%' }}
+                                style={{ width: '100%',outline:'none'}}
                                 type="email" 
                                 name="adminEmail"
                                 placeholder="firstbanknigeria@uk.com.ng" 
                                 value={formData.adminEmail}
                                 onChange={handleInputChange} 
+                            
                             />
                         </div>
                         <div>

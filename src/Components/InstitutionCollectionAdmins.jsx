@@ -1,194 +1,241 @@
-import "./InstitutionCollectionAdmins.css"
-import collectionarrowone from "../assets/Images/arrowatcir.png"
-import collectionarrowtwo from "../assets/Images/arrowrightcircle.png"
+import "./InstitutionCollectionAdmins.css";
+import collectionarrowone from "../assets/Images/arrowatcir.png";
+import collectionarrowtwo from "../assets/Images/arrowrightcircle.png";
 import { PiPencilSimpleLine } from "react-icons/pi";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function InstitutionCollectionAdmins() {
-  const data = [
-    {
-      Name: "Afolabi Abiodun O.",
-      EmailAddress: "afolabiabiodun@email.com",
-      Institution: "Guaranty Trust Bank PLC",
-      InstitutionID: "058",
-      Status: "Enabled",
-      DateCreated: "24-05-2022",
-      Edit: "",
-    },
-    {
-      Name: "Oni Issac U.",
-      EmailAddress: "issaconi@email.com",
-      Institution: "First Bank of Nigeria PLC",
-      InstitutionID: "011",
-      Status: "Enabled",
-      DateCreated: "24-05-2022",
-      Edit: "",
-    },
-    {
-      Name: "Femi Ilori A.",
-      EmailAddress: "ilori@email.com",
-      Institution: "Polaris Bank PLC",
-      InstitutionID: "047",
-      Status: "Suspended",
-      DateCreated: "04-01-2022",
-      Edit: "",
-    },
-    {
-      Name: "Aderogba Funke E.",
-      EmailAddress: "funke@email.com",
-      Institution: "Access Bank PLC",
-      InstitutionID: "044",
-      Status: "Enabled",
-      DateCreated: "04-01-2022",
-      Edit: "",
-    },
-    {
-      Name: "George Berkley A.",
-      EmailAddress: "georgey@email.com",
-      Institution: "United Bank for Africa PLC",
-      InstitutionID: "033",
-      Status: "Disabled",
-      DateCreated: "04-01-2022",
-      Edit: "",
-    },
-    {
-      Name: "Segun Olowokere T.",
-      EmailAddress: "olowokerepeter@email.com",
-      Institution: "Guaranty Trust Bank PLC",
-      InstitutionID: "070",
-      Status: "Enabled",
-      DateCreated: "24-05-2022",
-      Edit: "",
-    },
-    {
-      Name: "Boluwatife Ojo P.",
-      EmailAddress: "boluwatife@email.com",
-      Institution: "Fidelity Bank PLC",
-      InstitutionID: "214",
-      Status: "Disabled",
-      DateCreated: "14-03-2022",
-      Edit: "",
-    },
-    {
-      Name: "Tomiwa Adeleke A.",
-      EmailAddress: "tomiwa@email.com",
-      Institution: "First City Monument Bank PLC",
-      InstitutionID: "011",
-      Status: "Suspended",
-      DateCreated: "14-03-2022",
-      Edit: "",
-    },
-    {
-      Name: "Saheed Olawole O.",
-      EmailAddress: "saheed@email.com",
-      Institution: "First Bank of Nigeria PLC",
-      InstitutionID: "044",
-      Status: "Enabled",
-      DateCreated: "14-03-2022",
-      Edit: "",
-    },
-  ];
+  const [agents, setAgents] = useState([]);
+  const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [editingAgent, setEditingAgent] = useState(null);
+  const [editFormData, setEditFormData] = useState({});
+  const [loading, setLoading] = useState(false);
+  const itemsPerPage = 5;
+
+  // Fetch agents for the current page
+  const fetchAgents = async (page) => {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      setError("You are not logged in!");
+      // Optionally, you could redirect the user to the login page
+      window.location.href = '/login'; // Adjust this URL to your login route
+      return;
+    }
   
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `http://tm30usermanagement.tm30.net/user/agents/all/?page=${page}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    
+      setAgents(response.data.data?.getallagents || []);
+      setTotalPages(response.data.total_pages);
+      setError(null);
+    } catch (error) {
+      setError(`Error: ${error.response ? error.response.data.message : error.message}`);
+      console.error("Error fetching agents:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  useEffect(() => {
+    fetchAgents(currentPage);
+  }, [currentPage]);
 
+  const handlePrevPage = () => {
+    console.log('Prev button clicked'); // Debugging log to confirm the click
+    if (currentPage > 1) {
+      console.log('Moving to previous page'); // Debugging log
+      setCurrentPage(prev => prev - 1);
+    }
+  };
 
+  const handleNextPage = () => {
+    console.log('Next button clicked'); // Debugging log to confirm the click
+    if (currentPage < totalPages) {
+      console.log('Moving to next page'); // Debugging log
+      setCurrentPage(prev => prev + 1);
+    }
+  };
 
-   
+  const handleEditClick = (agent) => {
+    setEditingAgent(agent);
+    setEditFormData(agent);
+  };
 
+  const handleEditChange = (e) => {
+    const { name, value } = e.target;
+    setEditFormData({ ...editFormData, [name]: value });
+  };
 
+  const handleEditSubmit = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem('authToken');
 
+    try {
+      const response = await axios.put(
+        `http://tm30usermanagement.tm30.net/user/agents/${editingAgent.InstitutionID}`,
+        editFormData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Agent updated:", response.data);
+      setEditingAgent(null);
+      fetchAgents(currentPage);
+    } catch (error) {
+      setError("Failed to update agent");
+    }
+  };
 
-
-
+  const getPaginationRangeText = () => {
+    const start = (currentPage - 1) * itemsPerPage + 1;
+    const end = Math.min(currentPage * itemsPerPage, totalPages * itemsPerPage);
+    return `Showing ${start} to ${end} of ${totalPages * itemsPerPage} entries`;
+  };
 
   return (
-    <>
-      <div>
-        <div className="textapprove">
-          <p className="approve">Approved Admin</p>
-        </div>
-
-        <div>
-          <div className="sultabo">
-            <table className="tabso">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email Address</th>
-                  <th>Institution</th>
-                  <th>Institution ID</th>
-                  <th>Status</th>
-                  <th>Date Created</th>
-                  <th>Edit</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.Name}</td>
-                    <td>{item.EmailAddress}</td>
-                    <td>{item.Institution}</td>
-                    <td>{item.InstitutionID}</td>
-                    <td>
-                      <div
-                        style={{
-                          backgroundColor:
-                            item?.Status === "Enabled"
-                              ? "rgba(230, 246, 233, 1)"
-                              : item?.Status === "Disabled"
-                              ? "rgba(255, 58, 68, 0.1)"
-                              : item?.Status === "Suspended"
-                              ? "rgba(255, 245, 235, 1)"
-                              : "transparent",
-                          color:
-                            item?.Status === "Enabled"
-                              ? "rgba(1, 169, 38, 1)"
-                              : item?.Status === "Disabled"
-                              ? "rgba(255, 0, 17, 1)"
-                              : item?.Status === "Suspended"
-                              ? "rgba(255, 153, 58, 1)"
-                              : "transparent",
-                          padding: "10px",
-                          borderRadius: "5px",
-                          textAlign:"center"
-                        }}
-                      >
-                        {item.Status}
-                      </div>
-                    </td>
-                    <td>{item.DateCreated}</td>
-                    <td>
-                      <div style={{ color: "rgba(150, 148, 148, 1)" }}>
-                      <PiPencilSimpleLine />
-                        {item.Edit}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <br />
-          <br />
-          <div className="mainflexpage">
-            <p className="mainflexpageword">Showing 1 to 10 of 100 entries</p>
-            <div className="myflexpage">
-              <div>
-                <img src={collectionarrowone} alt="" /> 
-                <br />
-                <p className="mainsentence">Prev</p>
-              </div>
-              <div className="boxatone">
-                <p style={{color:'black'}}>1</p>
-              </div>
-              <div>
-                 <img src={collectionarrowtwo} alt="" /> 
-                <p className="secondsentence">Next</p>
-              </div>
-            </div>
-          </div>
-        </div> 
+    <div>
+      <div className="textapprove">
+        <p className="approve">Approved Admin</p>
       </div>
-    </>
+
+      <div className="sultabo">
+        <table className="tabso">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email Address</th>
+              <th>Gender</th>
+              <th>State</th>
+              <th>BVN</th>
+              <th>Status</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {error ? (
+              <tr>
+                <td colSpan="7" style={{ textAlign: "center", color: "red" }}>
+                  Error: {error}
+                </td>
+              </tr>
+            ) : loading ? (
+              <tr>
+                <td colSpan="7" style={{ textAlign: "center" }}>
+                  Loading...
+                </td>
+              </tr>
+            ) : (
+              agents?.map((item) => (
+                <tr key={item.InstitutionID}>
+                  <td>{item.fullname}</td>
+                  <td>{item.email}</td>
+                  <td>{item.gender}</td>
+                  <td>{item.state}</td>
+                  <td>{item.bvn}</td>
+                  <td>{item.status}</td>
+                  <td>
+                    <PiPencilSimpleLine
+                      onClick={() => handleEditClick(item)}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      {editingAgent && (
+        <div className="edit-form">
+          <h3>Edit Agent</h3>
+          <form onSubmit={handleEditSubmit}>
+            <input
+              name="fullname"
+              value={editFormData.fullname}
+              onChange={handleEditChange}
+              placeholder="Full Name"
+              required
+            />
+            <input
+              name="email"
+              value={editFormData.email}
+              onChange={handleEditChange}
+              placeholder="Email"
+              required
+            />
+            <input
+              name="gender"
+              value={editFormData.gender}
+              onChange={handleEditChange}
+              placeholder="Gender"
+              required
+            />
+            <input
+              name="state"
+              value={editFormData.state}
+              onChange={handleEditChange}
+              placeholder="State"
+              required
+            />
+            <input
+              name="bvn"
+              value={editFormData.bvn}
+              onChange={handleEditChange}
+              placeholder="BVN"
+              required
+            />
+            <button type="submit">Save</button>
+            <button type="button" onClick={() => setEditingAgent(null)}>
+              Cancel
+            </button>
+          </form>
+        </div>
+      )}
+
+      {/* Pagination Controls */}
+      <div className="mainflexpage">
+        <p className="mainflexpageword">{getPaginationRangeText()}</p>
+        <div className="myflexpage">
+          <div
+            onClick={handlePrevPage}
+            style={{
+              cursor: currentPage > 1 ? 'pointer' : '',
+              opacity: currentPage > 1 ? 1 : 0.5,
+            }}
+          >
+            <img src={collectionarrowone} alt="Previous" />
+            <p className="mainsentence">Prev</p>
+          </div>
+          <div className="boxatone">
+            <p>{currentPage}</p>
+          </div>
+          <div
+            onClick={handleNextPage}
+            style={{
+              cursor: currentPage < totalPages ? 'pointer' : '',
+              opacity: currentPage < totalPages ? 1 : 0.5,
+            }}
+          >
+            <img src={collectionarrowtwo} alt="Next" />
+            <p className="secondsentence">Next</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

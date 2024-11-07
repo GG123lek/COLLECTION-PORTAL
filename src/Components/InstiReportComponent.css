@@ -2,10 +2,11 @@
   
   .container {
     display: flex;
-    justify-content: space-around; /* Space between the columns */
+    justify-content: space-between; /* Space between the columns */
     align-items: flex-start; /* Align columns to the start */
     width: 100%;
     padding:20px;
+    flex-wrap: wrap;
    
   }
   
@@ -18,10 +19,12 @@
   .column-60 {
     width: 70%; /* Set width for the first column */
     margin-right: 20px; 
+    
   }
   
   .column-40 {
     width: 30%; /* Set width for the second column */
+    
   }
   
   .box {

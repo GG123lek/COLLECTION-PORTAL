@@ -36,7 +36,10 @@ function Reporting() {
      <img src={bluebell} alt=''/>
     </div>
     </div>
-    <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'20px'}}>
+       <div>
+        <p style={{color:'black',fontSize:'20px',fontWeight:'bold',padding:'20px'}}>Analytics Overview</p>
+       </div>
+              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',padding:'20px'}}>
                 <div style={{display:'flex'}}>
                   {reportOptions.map((option) => (
                     <button
@@ -56,13 +59,13 @@ function Reporting() {
                       {option}
                     </button>
                   ))}
-                </div>
+                 </div>
                 
                
               <div>
               <DownloadComponent/>
               </div>
-      </div>
+            </div>
 
             <div>
                   {selectedReport === "Institution" ? (

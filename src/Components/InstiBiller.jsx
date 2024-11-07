@@ -9,7 +9,7 @@ import wecar from "../assets/Images/wecar.png"
 import kellar from "../assets/Images/kellar.svg"
 import { BsArrowCounterclockwise } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
-import "./InstiReportComponent.css";
+import "./InstiBiller.css";
 import InstiChart from "./InstiChart";
 import EstiChart from "../components/EstiChart"
 import MetiChart from "./MetiChart";
@@ -111,6 +111,7 @@ function InstiBiller() {
       </div>
             
       <div className="container">
+        <div style={{display:'flex'}}>
         <div className="column column-60">
           <div className="box">
            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'20px'}}>
@@ -212,8 +213,8 @@ function InstiBiller() {
           
           </div>
         </div>
+        </div>
       </div>
-
     
     </div>
   );

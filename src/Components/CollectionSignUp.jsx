@@ -50,8 +50,7 @@ function CollectionSignUp({ children }) {
         console.log('Login successful:', data);
   
         
-        localStorage.setItem('apiToken', data.token); 
-  
+        localStorage.setItem('authToken', data.token);
         
          navigate('/dashboard');
       }

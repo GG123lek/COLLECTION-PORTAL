@@ -1,14 +1,4 @@
-.flexend {
-    display: flex; 
-    align-items: center; 
-    justify-content: flex-end; 
-    margin: 0; 
-    padding: 10px; 
-    gap: 10px;
-  }
-  
-  
-  
+
   
   .circlearrowinflex{
       display: flex;
@@ -20,15 +10,17 @@
       background-color: rgba(255, 153, 58, 1);
       align-items: center;
   }
-  .container {
-   display: flex;
-   justify-content: center;
-  }
+  .containers {
+    padding: 30px;
+}
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four columns */
-    gap: 100px; /* Space between containers */
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); /* Four columns */
+    gap: 10px; /* Space between containers */
+    /* flex-wrap: wrap; */
+    
+    
   }
   
   .clickable-container {
@@ -38,11 +30,8 @@
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
-    width: 30vh;
+    width: 38vh;
     height: 150px;
     border: none;
-   
-  
   }
-  
-  
+ 

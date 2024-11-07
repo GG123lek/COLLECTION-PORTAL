@@ -61,12 +61,12 @@ function DownloadComponent() {
             {isOpen && (
                 <div style={{
                     position: 'absolute',
-                    background: 'white',
-                    border: '',
+                    backgroundColor: 'none',
+                    border: '1px solid grey',
                     borderRadius: '4px',
                     marginTop: '',
                     zIndex: '1000',
-                    width:'200%'
+                    width:'100%'
                 }}>
                     <button onClick={() => handleDownload('pdf')}>Download PDF</button>
                     <button onClick={() => handleDownload('csv')}>Download CSV</button>

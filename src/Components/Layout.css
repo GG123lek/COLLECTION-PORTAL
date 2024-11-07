@@ -1,0 +1,21 @@
+.layout {
+    display: flex;
+  }
+  
+  .sidebar {
+    background: #f0f0f0;
+    width: 250px; /* Default width */
+  }
+  
+  .content {
+    flex: 1; /* Takes up remaining space */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%; /* Full width on mobile */
+      position: relative;
+    }
+  }
+  

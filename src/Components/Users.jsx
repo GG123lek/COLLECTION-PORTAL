@@ -97,12 +97,14 @@ function Users() {
           </div>
         </div>
         {!selectedCategory && (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '30px' }}>
+        <div style={{padding:'30px'}}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between',}}>
           <p style={{ color: 'black', fontSize: '20px', fontWeight: 'bold' }}>User Category</p>
           <div className="circlearrowinflex" style={{ cursor: 'pointer' }} onClick={openModal}>
             <img src={insticircle} alt="" />
             <p className="circlearrowtext">Add New Institution</p>
           </div>
+        </div>
         </div>
       )}
         {!selectedCategory && (
@@ -117,7 +119,7 @@ function Users() {
      renderCategoryComponent()
           ) : (
             <>
-              <div className="container">
+              <div className="containers">
                 <div className="grid">
                   <div className="clickable-container" onClick={() => handleContainerClick(imageuserone)}>
                     <div>

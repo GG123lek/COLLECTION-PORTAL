@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link,} from 'react-router-dom'; // Import useNavigate
 import "./Institutions.css";
 import Layout from "./Layout";
 import { IoIosSearch } from "react-icons/io";
@@ -174,8 +174,8 @@ function Institution() {
               <tbody>
                         {info.map((item) => (
                           <tr key={item.id}>
-                            <Link to={`/institutions/${item.id}`} className="cursor-pointer" style={{textDecoration:'none'}}>
-                            <td  className="cursor-pointer">{item.Institutions}</td>
+                            <Link to={`/institutions/${item.id}`} className="cursor-pointer" style={{textDecoration:'none',}}>
+                            <td  className="cursor-pointer" >{item.Institutions}</td>
                             </Link>
                             
                             <td>{item.Abbreviations}</td>

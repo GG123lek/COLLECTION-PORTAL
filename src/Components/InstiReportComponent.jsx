@@ -113,6 +113,7 @@ function InstiReportComponent() {
      
      
        <div className="container">
+        <div style={{display:'flex',}}>
         <div className="column column-60">
           <div className="box">
            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'20px'}}>
@@ -213,6 +214,7 @@ function InstiReportComponent() {
             </div>
           
           </div>
+        </div>
         </div>
       </div>
 
