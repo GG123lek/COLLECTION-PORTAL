@@ -4,7 +4,7 @@ import bluebell from "../assets/Images/bluebell.png";
 import { FaSearch } from 'react-icons/fa';
 import { IoFilterSharp } from "react-icons/io5";
 
-import ThreeTransComponent from "../components/ThreeTransComponent";
+import ThreeTransComponent from "../Components/ThreeTransComponent";
 import collectionarrowone from "../assets/Images/arrowatcir.png";
 import collectionarrowtwo from "../assets/Images/arrowrightcircle.png";
 import { useState } from "react";
