@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
 import "./ForgetPassword.css";
+import LoaderComponent from "../Components/LoaderComponent"; // Import the LoaderComponent
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif";
 
@@ -20,42 +21,50 @@ function ForgetPassword() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent form submission and page reload
     setError('');
-    setLoading(true);
+    setLoading(true); // Start loading animation
 
+    // Validation checks
     if (!email || !otp || !newPassword || !confirmPassword) {
       setError('All fields are required!');
-      setLoading(false);
+      setLoading(false); // Stop loader if there's an error
       return;
     }
     if (!validateEmail(email)) {
       setError('Please enter a valid email address.');
-      setLoading(false);
+      setLoading(false); // Stop loader if there's an error
       return;
     }
     if (otp.length !== 6 || isNaN(otp)) {
       setError('OTP must be a 6-digit number.');
-      setLoading(false);
+      setLoading(false); // Stop loader if there's an error
       return;
     }
     if (newPassword.length < 8) {
       setError('Password must be at least 8 characters long.');
-      setLoading(false);
+      setLoading(false); // Stop loader if there's an error
       return;
     }
     if (newPassword !== confirmPassword) {
       setError('Passwords do not match!');
-      setLoading(false);
+      setLoading(false); // Stop loader if there's an error
       return;
     }
 
-    console.log('Password reset:', { email, otp, newPassword });
-    setLoading(false);
+    // Simulating an async task (like an API call)
+    setTimeout(() => {
+      console.log('Password reset:', { email, otp, newPassword });
 
-    // Display success alert and navigate back to the home page
-    alert("Password reset successfully!");
-    navigate('/');
+      // Stop loading animation after task completion
+      setLoading(false);
+
+      // Display success alert
+      alert("Password reset successfully!");
+
+      // Redirect user to another page (like home page or login)
+      navigate('/');
+    }, 2000); // Simulate an async delay, adjust as per your needs (API request time)
   };
 
   return (
@@ -112,7 +121,9 @@ function ForgetPassword() {
         </div>
       </div>
 
-      {/* Right side with animated GIF background */}
+    
+      {loading && <LoaderComponent />}
+     
       <div style={{ width: '50%', position: 'relative' }}>
         <img
           src={animatedGifUrl} 
@@ -134,7 +145,7 @@ function ForgetPassword() {
           textAlign: 'center',
           color: 'white',
         }}>
-          {/* Any content overlay on top of the GIF */}
+        
         </div>
       </div>
     </div>

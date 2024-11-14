@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { IoIosSearch } from "react-icons/io";
+import LoaderComponent from "../Components/LoaderComponent";  // Your LoaderComponent import
 
-// Import the external GIF URL
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif"; // Example external GIF URL
 
 function CollectionSignUp({ children }) {
@@ -24,21 +23,21 @@ function CollectionSignUp({ children }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setLoading(true);
+    setLoading(true); // Start loading when form is submitted
     
     if (!email || !password) {
       setError('All fields are required!');
-      setLoading(false);
+      setLoading(false); // Stop loading if there's an error
       return;
     }
-  
+
     try {
       const response = await fetch('http://tm30usermanagement.tm30.net/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         const errorMessage = errorData.message || 'Login failed';
@@ -52,7 +51,7 @@ function CollectionSignUp({ children }) {
     } catch (err) {
       setError('An error occurred. Please try again.');
     } finally {
-      setLoading(false);
+      setLoading(false); // Stop loading once the process is done
     }
   };
 
@@ -120,7 +119,7 @@ function CollectionSignUp({ children }) {
                 flexDirection: 'row-reverse',
                 padding: '5px',
               }}>
-                {showPassword ? <FaEyeSlash onClick={togglePasswordVisibility} style={{ color: 'red' }} /> : <FaEye onClick={togglePasswordVisibility} style={{ color: 'red' }} />}
+                {showPassword ? <FaEyeSlash onClick={togglePasswordVisibility} style={{ color: 'red' }} /> : <FaEye onClick={togglePasswordVisibility} style={{ color: 'red', cursor: 'pointer' }} />}
                 <input
                   name="text"
                   placeholder="Enter your password"
@@ -143,7 +142,7 @@ function CollectionSignUp({ children }) {
         </div>
       </div>
 
-     
+      {/* Right half of the screen with animated gif and loader */}
       <div style={{ width: '50%', position: 'relative' }}>
         <img
           src={animatedGifUrl} 
@@ -168,6 +167,9 @@ function CollectionSignUp({ children }) {
           {children}
         </div>
       </div>
+
+    
+      {loading && <LoaderComponent loading={loading} />}
     </div>
   );
 }
