@@ -1,9 +1,9 @@
-import "../components/Transactions.css"
+import "./Transactions.css"
 import markinson from "../assets/Images/markinson.png";
 import bluebell from "../assets/Images/bluebell.png";
 import { FaSearch } from 'react-icons/fa';
 import { IoFilterSharp } from "react-icons/io5";
-import { IoIosSearch } from "react-icons/io";
+
 import ThreeTransComponent from "../components/ThreeTransComponent";
 import collectionarrowone from "../assets/Images/arrowatcir.png";
 import collectionarrowtwo from "../assets/Images/arrowrightcircle.png";
