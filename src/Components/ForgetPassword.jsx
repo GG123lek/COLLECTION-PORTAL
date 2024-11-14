@@ -1,7 +1,9 @@
-// ForgotPassword.js
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
-import "./CollectionSignUp.css"; // Reusing the same CSS
+import "./ForgetPassword.css";
+
+const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif";
 
 function ForgetPassword() {
   const [email, setEmail] = useState('');
@@ -10,30 +12,50 @@ function ForgetPassword() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    // Basic validation
     if (!email || !otp || !newPassword || !confirmPassword) {
       setError('All fields are required!');
       setLoading(false);
       return;
     }
-    
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address.');
+      setLoading(false);
+      return;
+    }
+    if (otp.length !== 6 || isNaN(otp)) {
+      setError('OTP must be a 6-digit number.');
+      setLoading(false);
+      return;
+    }
+    if (newPassword.length < 8) {
+      setError('Password must be at least 8 characters long.');
+      setLoading(false);
+      return;
+    }
     if (newPassword !== confirmPassword) {
       setError('Passwords do not match!');
       setLoading(false);
       return;
     }
 
-    // Proceed with password reset logic here (e.g., API call)
     console.log('Password reset:', { email, otp, newPassword });
-    
-    // Reset loading state
     setLoading(false);
+
+    // Display success alert and navigate back to the home page
+    alert("Password reset successfully!");
+    navigate('/');
   };
 
   return (
@@ -44,15 +66,7 @@ function ForgetPassword() {
 
       <div style={{ width: '50%', background: 'white' }}>
         <div className="signup-container">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/>
           <div className="form-container">
             <p style={{ color: 'blue', fontSize: '20px', fontWeight: 'bold' }}>Reset Your Password</p>
             <form onSubmit={handleSubmit}>
@@ -61,7 +75,7 @@ function ForgetPassword() {
                 placeholder="Enter Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                style={{outline:'none'}}
+                style={{ outline: 'none' }}
               />
               <br />
               <input
@@ -69,7 +83,7 @@ function ForgetPassword() {
                 placeholder="Enter OTP"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
-                style={{outline:'none'}}
+                style={{ outline: 'none' }}
               />
               <br />
               <input
@@ -77,7 +91,7 @@ function ForgetPassword() {
                 placeholder="New Password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                style={{outline:'none'}}
+                style={{ outline: 'none' }}
               />
               <br />
               <input
@@ -85,19 +99,43 @@ function ForgetPassword() {
                 placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                style={{outline:'none'}}
+                style={{ outline: 'none' }}
               />
               <br/>
+              <br/>
               {error && <p className="error">{error}</p>}
-              <button type="submit" disabled={loading}>
-                {loading ? 'Resetting...' : 'Login'}
+              <button type="submit" style={{width:'105%'}} disabled={loading}>
+                {loading ? 'Resetting...' : 'Reset Password'}
               </button>
             </form>
           </div>
         </div>
       </div>
-      <div style={{ width: '50%', background: 'blue' }}>
-        {/* Optional children or other content */}
+
+      {/* Right side with animated GIF background */}
+      <div style={{ width: '50%', position: 'relative' }}>
+        <img
+          src={animatedGifUrl} 
+          alt="Animated Background"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover', 
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 0, 
+          }}
+        />
+        <div style={{
+          position: 'relative',
+          zIndex: 1, 
+          padding: '20px',
+          textAlign: 'center',
+          color: 'white',
+        }}>
+          {/* Any content overlay on top of the GIF */}
+        </div>
       </div>
     </div>
   );
