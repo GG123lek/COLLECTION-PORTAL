@@ -13,15 +13,14 @@ function InstitutionCollectionAdmins() {
   const [editingAgent, setEditingAgent] = useState(null);
   const [editFormData, setEditFormData] = useState({});
   const [loading, setLoading] = useState(false);
-  const itemsPerPage = 5;
+  const itemsPerPage = 5; // Define the number of items per page
 
   // Fetch agents for the current page
   const fetchAgents = async (page) => {
     const token = localStorage.getItem('authToken');
     if (!token) {
       setError("You are not logged in!");
-      // Optionally, you could redirect the user to the login page
-      window.location.href = '/login'; // Adjust this URL to your login route
+      window.location.href = '/login'; // Redirect to login if not authenticated
       return;
     }
   
@@ -37,7 +36,7 @@ function InstitutionCollectionAdmins() {
       );
     
       setAgents(response.data.data?.getallagents || []);
-      setTotalPages(response.data.total_pages);
+      setTotalPages(response.data.total_pages); // Set total pages
       setError(null);
     } catch (error) {
       setError(`Error: ${error.response ? error.response.data.message : error.message}`);
@@ -46,23 +45,20 @@ function InstitutionCollectionAdmins() {
       setLoading(false);
     }
   };
-  
+
+  // Fetch agents when the page changes
   useEffect(() => {
     fetchAgents(currentPage);
   }, [currentPage]);
 
   const handlePrevPage = () => {
-    console.log('Prev button clicked'); // Debugging log to confirm the click
     if (currentPage > 1) {
-      console.log('Moving to previous page'); // Debugging log
       setCurrentPage(prev => prev - 1);
     }
   };
 
   const handleNextPage = () => {
-    console.log('Next button clicked'); // Debugging log to confirm the click
     if (currentPage < totalPages) {
-      console.log('Moving to next page'); // Debugging log
       setCurrentPage(prev => prev + 1);
     }
   };
@@ -93,7 +89,7 @@ function InstitutionCollectionAdmins() {
       );
       console.log("Agent updated:", response.data);
       setEditingAgent(null);
-      fetchAgents(currentPage);
+      fetchAgents(currentPage); // Refresh data after edit
     } catch (error) {
       setError("Failed to update agent");
     }
@@ -213,7 +209,7 @@ function InstitutionCollectionAdmins() {
           <div
             onClick={handlePrevPage}
             style={{
-              cursor: currentPage > 1 ? 'pointer' : '',
+              cursor: currentPage > 1 ? 'pointer' : 'not-allowed',
               opacity: currentPage > 1 ? 1 : 0.5,
             }}
           >
@@ -226,7 +222,7 @@ function InstitutionCollectionAdmins() {
           <div
             onClick={handleNextPage}
             style={{
-              cursor: currentPage < totalPages ? 'pointer' : '',
+              cursor: currentPage < totalPages ? 'pointer' : 'not-allowed',
               opacity: currentPage < totalPages ? 1 : 0.5,
             }}
           >
