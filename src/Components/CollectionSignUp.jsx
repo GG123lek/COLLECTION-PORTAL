@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import LoaderComponent from "../Components/LoaderComponent";  // Your LoaderComponent import
+import LoaderComponent from "../Components/LoaderComponent";
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif"; // Example external GIF URL
 
@@ -20,58 +20,61 @@ function CollectionSignUp({ children }) {
     setShowPassword(!showPassword);
   };
 
+  // Helper function to wrap around fetch and show an alert on success
+  async function fetchWithAlert(url, options = {}) {
+    try {
+      const response = await fetch(url, options);
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Request failed');
+      }
+
+      const data = await response.json();
+      alert('Request successful!'); // Show alert when request is successful
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setLoading(true); // Start loading when form is submitted
-    
+    setLoading(true);
+
     if (!email || !password) {
       setError('All fields are required!');
-      setLoading(false); // Stop loading if there's an error
+      setLoading(false);
       return;
     }
 
     try {
-      const response = await fetch('http://tm30usermanagement.tm30.net/auth/login', {
+      const data = await fetchWithAlert('http://tm30usermanagement.tm30.net/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        const errorMessage = errorData.message || 'Login failed';
-        setError(errorMessage);
-      } else {
-        const data = await response.json();
-        console.log('Login successful:', data);
-        localStorage.setItem('authToken', data.token);
-        navigate('/dashboard');
-      }
+      console.log('Login successful:', data);
+      localStorage.setItem('authToken', data.token);
+      navigate('/dashboard');
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      setError('Login failed. Please check your credentials and try again.');
     } finally {
-      setLoading(false); // Stop loading once the process is done
+      setLoading(false);
     }
   };
 
   const fetchAgents = async () => {
     try {
-      const response = await fetch('http://tm30usermanagement.tm30.net/user/agents/all/?page=1', {
+      const data = await fetchWithAlert('http://tm30usermanagement.tm30.net/user/agents/all/?page=1', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Error fetching agents:', errorData);
-      } else {
-        const data = await response.json();
-        console.log('Agents fetched:', data);
-        setAgents(data); 
-      }
+      console.log('Agents fetched:', data);
+      setAgents(data);
     } catch (err) {
-      console.error('An error occurred while fetching agents:', err);
+      console.error('Error fetching agents:', err);
     }
   };
 
@@ -81,7 +84,6 @@ function CollectionSignUp({ children }) {
 
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
-      {/* Left half of the screen with form */}
       <div style={{ width: '50%', background: 'white' }}>
         <img src={imageunifiedpicture} alt='' />
         <div className="signup-container">
@@ -142,24 +144,23 @@ function CollectionSignUp({ children }) {
         </div>
       </div>
 
-      {/* Right half of the screen with animated gif and loader */}
       <div style={{ width: '50%', position: 'relative' }}>
         <img
-          src={animatedGifUrl} 
+          src={animatedGifUrl}
           alt="Animated Background"
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover', 
+            objectFit: 'cover',
             position: 'absolute',
             top: 0,
             left: 0,
-            zIndex: 0, 
+            zIndex: 0,
           }}
         />
         <div style={{
           position: 'relative',
-          zIndex: 1, 
+          zIndex: 1,
           padding: '20px',
           textAlign: 'center',
           color: 'white',
@@ -168,8 +169,8 @@ function CollectionSignUp({ children }) {
         </div>
       </div>
 
-    
-      {loading && <LoaderComponent loading={loading} />}
+      {/* Show LoaderComponent in a centered overlay when loading */}
+      {loading && <LoaderComponent />}
     </div>
   );
 }
