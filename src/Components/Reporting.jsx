@@ -2,9 +2,9 @@ import Layout from "./Layout"
 import markinson from "../assets/Images/markinson.png";
 import bluebell from "../assets/Images/bluebell.png";
 import "./Reporting.css"
-import InstiReportComponent from "../Components/InstiReportComponent"
-import InstiBiller from  "../components/InstiBiller"
-import DownloadComponent from "../components/DownloadComponent";
+import InstiReportComponent from "./InstiReportComponent"
+import InstiBiller from  "./InstiBiller"
+import DownloadComponent from "./DownloadComponent";
 import { IoIosSearch } from "react-icons/io";
 import { useState } from 'react';
 

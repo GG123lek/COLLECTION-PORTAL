@@ -11,7 +11,7 @@ import { BsArrowCounterclockwise } from "react-icons/bs";
 import { FiSend } from "react-icons/fi";
 import "./InstiReportComponent.css";
 import InstiChart from "./InstiChart";
-import EstiChart from "../components/EstiChart"
+import EstiChart from "./EstiChart"
 import MetiChart from "./MetiChart";
 import RealChart from "./RealChart";
 import LastChart from "./LastChart";

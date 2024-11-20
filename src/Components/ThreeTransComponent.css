@@ -1,30 +1,45 @@
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    flex-direction: column;
-    position: relative;
-    left: 120px;
-    bottom: 20px;
-  }
-  
-  .flex-container {
+.transcontainerthree{
+    border: 1px solid orangered;
+    padding: 5px;
+    width: 210px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-  }
-  
-  .transcontainerthree,
-  .transcontainerthrees,
-  .transcontainers {
+    color: blueviolet;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: aquamarine;
+}
+.transcontainers{
+    border: none;
+    padding: 5px;
+    width: 180px;
+    height: 50px;
     display: flex;
     align-items: center;
-    gap: 5px;
-  }
-  
-  .icon {
-    width: 40px;
-  }
-  
+    justify-content: center;
+    gap: 10px;
+    color: blueviolet;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: aquamarine;
+}
+.transcontainerthrees{
+    border: none;
+    padding: 5px;
+    width: 210px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: blueviolet;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: aquamarine;
+}
