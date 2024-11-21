@@ -5,6 +5,7 @@ import "./ForgetPassword.css";
 import LoaderComponent from "../Components/LoaderComponent"; // Import the LoaderComponent
 import design from "../assets/Images/Design.png"
 import Footer from "./Footer";
+import FooterTwo from "./FooterTwo";
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif";
 
@@ -121,7 +122,11 @@ function ForgetPassword() {
             </form>
           </div>
         </div>
-      
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      <FooterTwo/>
       </div>
 
     
