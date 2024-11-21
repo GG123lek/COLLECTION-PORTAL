@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
 import "./ForgetPassword.css";
 import LoaderComponent from "../Components/LoaderComponent"; // Import the LoaderComponent
+import design from "../assets/Images/Design.png"
+import Footer from "./Footer";
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif";
 
@@ -40,7 +42,7 @@ function ForgetPassword() {
       setError('OTP must be a 6-digit number.');
       setLoading(false); // Stop loader if there's an error
       return;
-    }
+    } 
     if (newPassword.length < 8) {
       setError('Password must be at least 8 characters long.');
       setLoading(false); // Stop loader if there's an error
@@ -119,35 +121,31 @@ function ForgetPassword() {
             </form>
           </div>
         </div>
+      
       </div>
 
     
       {loading && <LoaderComponent />}
-     
-      <div style={{ width: '50%', position: 'relative' }}>
-        <img
-          src={animatedGifUrl} 
+      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'lightblue'}}>
+        {/* <img
+          src={animatedGifUrl}
           alt="Animated Background"
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover', 
+            objectFit: 'cover',
             position: 'absolute',
             top: 0,
             left: 0,
-            zIndex: 0, 
+            zIndex: 0,
           }}
-        />
-        <div style={{
-          position: 'relative',
-          zIndex: 1, 
-          padding: '20px',
-          textAlign: 'center',
-          color: 'white',
-        }}>
-        
-        </div>
+        /> */}
+        <img src={design} alt='' style={{
+         width:"55%",position:'relative',left:'250px',bottom:'50px'
+        }} />
+      
       </div>
+     
     </div>
   );
 }

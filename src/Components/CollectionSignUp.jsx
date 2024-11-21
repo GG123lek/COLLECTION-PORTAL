@@ -4,6 +4,8 @@ import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import LoaderComponent from "../Components/LoaderComponent";
+import design from "../assets/Images/Design.png"
+import Footer from "./Footer";
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif"; // Example external GIF URL
 
@@ -20,7 +22,6 @@ function CollectionSignUp({ children }) {
     setShowPassword(!showPassword);
   };
 
-  // Helper function to wrap around fetch and show an alert on success
   async function fetchWithAlert(url, options = {}) {
     try {
       const response = await fetch(url, options);
@@ -31,7 +32,7 @@ function CollectionSignUp({ children }) {
       }
 
       const data = await response.json();
-      alert('Request successful!'); // Show alert when request is successful
+      alert('Request successful!');
       return data;
     } catch (error) {
       throw error;
@@ -84,7 +85,7 @@ function CollectionSignUp({ children }) {
 
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
-      <div style={{ width: '50%', background: 'white' }}>
+      <div style={{ width: '50%', backgroundColor: 'white',borderRadius:'20px'}}>
         <img src={imageunifiedpicture} alt='' />
         <div className="signup-container">
           <p style={{ color: 'blue', fontSize: '20px', position: 'relative', left: '50px' }}>
@@ -98,7 +99,6 @@ function CollectionSignUp({ children }) {
                 alignItems: 'center',
                 border: '1px solid grey',
                 width: '150%',
-                borderRadius: '5px',
                 backgroundColor: 'white',
                 padding: '5px',
               }}>
@@ -107,7 +107,12 @@ function CollectionSignUp({ children }) {
                   placeholder="Enter your Email"
                   value={email}
                   onChange={(e) => { setEmail(e.target.value) }}
-                  style={{ border: 'none', backgroundColor: 'transparent', outline: 'none' }}
+                  style={{
+                    border: 'none',
+                    backgroundColor: 'transparent',
+                    outline: 'none',
+                    width: '100%',
+                  }}
                 />
               </div>
               <br />
@@ -116,19 +121,33 @@ function CollectionSignUp({ children }) {
                 alignItems: 'center',
                 border: '1px solid grey',
                 width: '150%',
-                borderRadius: '5px',
                 backgroundColor: 'white',
                 flexDirection: 'row-reverse',
                 padding: '5px',
               }}>
-                {showPassword ? <FaEyeSlash onClick={togglePasswordVisibility} style={{ color: 'red' }} /> : <FaEye onClick={togglePasswordVisibility} style={{ color: 'red', cursor: 'pointer' }} />}
+                {showPassword ? (
+                  <FaEyeSlash
+                    onClick={togglePasswordVisibility}
+                    style={{ color: 'red', cursor: 'pointer' }}
+                  />
+                ) : (
+                  <FaEye
+                    onClick={togglePasswordVisibility}
+                    style={{ color: 'red', cursor: 'pointer' }}
+                  />
+                )}
                 <input
                   name="text"
                   placeholder="Enter your password"
                   onChange={(e) => { setPassword(e.target.value) }}
                   value={password}
                   type={showPassword ? "text" : "password"}
-                  style={{ border: 'none', backgroundColor: 'transparent', outline: 'none' }}
+                  style={{
+                    border: 'none',
+                    backgroundColor: 'transparent',
+                    outline: 'none',
+                    width: '100%',
+                  }}
                 />
               </div>
               <br />
@@ -142,10 +161,11 @@ function CollectionSignUp({ children }) {
             </p>
           </div>
         </div>
+      <Footer/>
       </div>
-
-      <div style={{ width: '50%', position: 'relative' }}>
-        <img
+     
+      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'lightblue'}}>
+        {/* <img
           src={animatedGifUrl}
           alt="Animated Background"
           style={{
@@ -157,19 +177,13 @@ function CollectionSignUp({ children }) {
             left: 0,
             zIndex: 0,
           }}
-        />
-        <div style={{
-          position: 'relative',
-          zIndex: 1,
-          padding: '20px',
-          textAlign: 'center',
-          color: 'white',
-        }}>
-          {children}
-        </div>
+        /> */}
+        <img src={design} alt='' style={{
+         width:"55%",position:'relative',left:'250px',bottom:'50px'
+        }} />
+    
       </div>
 
-      {/* Show LoaderComponent in a centered overlay when loading */}
       {loading && <LoaderComponent />}
     </div>
   );
