@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import LoaderComponent from "../Components/LoaderComponent";
 import design from "../assets/Images/Design.png"
-import Footer from "./Footer";
+import Footer from "../components/Footer"
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif"; // Example external GIF URL
 
@@ -55,7 +55,7 @@ function CollectionSignUp({ children }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
-      });
+      }); 
       console.log('Login successful:', data);
       localStorage.setItem('authToken', data.token);
       navigate('/dashboard');
@@ -88,7 +88,7 @@ function CollectionSignUp({ children }) {
       <div style={{ width: '50%', backgroundColor: 'white',borderRadius:'20px'}}>
         <img src={imageunifiedpicture} alt='' />
         <div className="signup-container">
-          <p style={{ color: 'blue', fontSize: '20px', position: 'relative', left: '50px' }}>
+          <p className="text-red-500" style={{ fontSize: '20px', position: 'relative', left: '50px' }}>
             Sign Up Into Unified Payment
           </p>
           <br />
@@ -161,6 +161,8 @@ function CollectionSignUp({ children }) {
             </p>
           </div>
         </div>
+        <br/>
+        <br/>
       <Footer/>
       </div>
      

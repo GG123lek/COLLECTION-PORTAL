@@ -126,6 +126,7 @@ function ForgetPassword() {
         <br/>
         <br/>
         <br/>
+        <br/>
       <FooterTwo/>
       </div>
 
@@ -148,9 +149,7 @@ function ForgetPassword() {
         <img src={design} alt='' style={{
          width:"55%",position:'relative',left:'250px',bottom:'50px'
         }} />
-      
-      </div>
-     
+    </div> 
     </div>
   );
 }
