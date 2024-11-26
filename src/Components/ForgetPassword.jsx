@@ -6,6 +6,8 @@ import LoaderComponent from "../Components/LoaderComponent"; // Import the Loade
 import design from "../assets/Images/Design.png"
 import Footer from "./Footer";
 import FooterTwo from "./FooterTwo";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif";
 
@@ -17,6 +19,7 @@ function ForgetPassword() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -111,9 +114,34 @@ function ForgetPassword() {
                 placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                style={{ outline: 'none' }}
+                style={{ outline: 'none' ,}}
               />
-              <br/>
+                        <div style={{ padding: '' }}>
+              <label htmlFor="date-picker" style={{ display: 'flex', flexDirection: 'column' }}>
+                Select a Date:
+              </label>
+              <DatePicker
+                id="date-picker"
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                dateFormat="dd/MM/yyyy"
+                placeholderText="Click to select a date"
+                className="custom-date-picker"
+                popperPlacement="bottom"
+                popperModifiers={[
+                  {
+                    name: 'offset',
+                    options: {
+                      offset: [0, 10],
+                    },
+                  },
+                ]}
+              />
+              {selectedDate && (
+                <p style={{ marginTop: '10px' }}>Selected Date: {selectedDate.toLocaleDateString()}</p>
+              )}
+            </div>
+
               <br/>
               {error && <p className="error">{error}</p>}
               <button type="submit" style={{width:'105%'}} disabled={loading}>
@@ -132,7 +160,7 @@ function ForgetPassword() {
 
     
       {loading && <LoaderComponent />}
-      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'lightblue'}}>
+      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'blue'}}>
         {/* <img
           src={animatedGifUrl}
           alt="Animated Background"

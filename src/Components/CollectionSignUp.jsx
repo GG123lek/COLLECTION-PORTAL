@@ -33,7 +33,7 @@ function CollectionSignUp({ children }) {
 
       const data = await response.json();
       alert('Request successful!');
-      return data;
+      return data;  
     } catch (error) {
       throw error;
     }
@@ -147,6 +147,7 @@ function CollectionSignUp({ children }) {
                     backgroundColor: 'transparent',
                     outline: 'none',
                     width: '100%',
+                  
                   }}
                 />
               </div>
@@ -166,7 +167,7 @@ function CollectionSignUp({ children }) {
       <Footer/>
       </div>
      
-      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'lightblue'}}>
+      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'blue'}}>
         {/* <img
           src={animatedGifUrl}
           alt="Animated Background"
