@@ -117,7 +117,7 @@ function ForgetPassword() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 style={{ outline: 'none' ,}}
               />
-                      <div style={{ padding: '' }}>
+      <div style={{ padding: '' }}>
       <label htmlFor="date-picker" style={{ display: 'flex', flexDirection: 'column' }}>
         Select a Date:
       </label>
@@ -128,13 +128,13 @@ function ForgetPassword() {
         placeholder="Click to select a date"
         className="custom-date-picker"
         readOnly
-        onClick={() => setIsCalendarOpen((prev) => !prev)} // Toggle calendar visibility
+        onClick={() => setIsCalendarOpen((prev) => !prev)} 
       />
       <DatePicker
         selected={selectedDate}
         onChange={(date) => {
           setSelectedDate(date);
-          setIsCalendarOpen(false); // Close calendar after selecting a date
+          setIsCalendarOpen(false); 
         }}
         dateFormat="dd/MM/yyyy"
         popperPlacement="bottom"
@@ -146,15 +146,15 @@ function ForgetPassword() {
             },
           },
         ]}
-        open={isCalendarOpen} // Control calendar visibility
-        onClickOutside={() => setIsCalendarOpen(false)} // Close on outside click
+        open={isCalendarOpen} 
+        onClickOutside={() => setIsCalendarOpen(false)} 
         className="custom-date-picker"
         wrapperClassName="custom-date-picker-wrapper"
       />
       {selectedDate && (
         <p style={{ marginTop: '10px' }}>Selected Date: {selectedDate.toLocaleDateString('en-GB')}</p>
       )}
-                      </div>
+     </div>
               <br/>
               {error && <p className="error">{error}</p>}
               <button type="submit" style={{width:'105%'}} disabled={loading}>
