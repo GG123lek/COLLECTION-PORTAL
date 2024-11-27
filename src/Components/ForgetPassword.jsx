@@ -20,6 +20,7 @@ function ForgetPassword() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(null);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -116,32 +117,44 @@ function ForgetPassword() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 style={{ outline: 'none' ,}}
               />
-                        <div style={{ padding: '' }}>
-              <label htmlFor="date-picker" style={{ display: 'flex', flexDirection: 'column' }}>
-                Select a Date:
-              </label>
-              <DatePicker
-                id="date-picker"
-                selected={selectedDate}
-                onChange={(date) => setSelectedDate(date)}
-                dateFormat="dd/MM/yyyy"
-                placeholderText="Click to select a date"
-                className="custom-date-picker"
-                popperPlacement="bottom"
-                popperModifiers={[
-                  {
-                    name: 'offset',
-                    options: {
-                      offset: [0, 10],
-                    },
-                  },
-                ]}
-              />
-              {selectedDate && (
-                <p style={{ marginTop: '10px' }}>Selected Date: {selectedDate.toLocaleDateString()}</p>
-              )}
-            </div>
-
+                      <div style={{ padding: '' }}>
+      <label htmlFor="date-picker" style={{ display: 'flex', flexDirection: 'column' }}>
+        Select a Date:
+      </label>
+      <input
+        id="date-picker"
+        type="text"
+        value={selectedDate ? selectedDate.toLocaleDateString('en-GB') : ''}
+        placeholder="Click to select a date"
+        className="custom-date-picker"
+        readOnly
+        onClick={() => setIsCalendarOpen((prev) => !prev)} // Toggle calendar visibility
+      />
+      <DatePicker
+        selected={selectedDate}
+        onChange={(date) => {
+          setSelectedDate(date);
+          setIsCalendarOpen(false); // Close calendar after selecting a date
+        }}
+        dateFormat="dd/MM/yyyy"
+        popperPlacement="bottom"
+        popperModifiers={[
+          {
+            name: 'offset',
+            options: {
+              offset: [0, 10],
+            },
+          },
+        ]}
+        open={isCalendarOpen} // Control calendar visibility
+        onClickOutside={() => setIsCalendarOpen(false)} // Close on outside click
+        className="custom-date-picker"
+        wrapperClassName="custom-date-picker-wrapper"
+      />
+      {selectedDate && (
+        <p style={{ marginTop: '10px' }}>Selected Date: {selectedDate.toLocaleDateString('en-GB')}</p>
+      )}
+                      </div>
               <br/>
               {error && <p className="error">{error}</p>}
               <button type="submit" style={{width:'105%'}} disabled={loading}>
