@@ -86,7 +86,10 @@ function CollectionSignUp({ children }) {
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       <div style={{ width: '50%', backgroundColor: 'white',borderRadius:'20px'}}>
+        <div style={{padding:'20px'}}>
         <img src={imageunifiedpicture} alt='' />
+        <p style={{color:'#52C3F1'}}>Unified Payment</p>
+        </div>
         <div className="signup-container">
           <p className="text-red-500" style={{ fontSize: '20px', position: 'relative', left: '50px' }}>
             Sign Up Into Unified Payment
@@ -108,7 +111,7 @@ function CollectionSignUp({ children }) {
                   value={email}
                   onChange={(e) => { setEmail(e.target.value) }}
                   style={{
-                    
+
                     border: 'none',
                     backgroundColor: 'transparent',
                     outline: 'none',

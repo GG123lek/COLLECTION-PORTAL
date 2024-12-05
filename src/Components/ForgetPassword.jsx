@@ -78,6 +78,7 @@ function ForgetPassword() {
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       <div style={{ padding: '20px' }}>
         <img src={imageunifiedpicture} alt='' />
+        <p style={{color:'#52C3F1'}}>Unified Payment</p>
       </div>
 
       <div style={{ width: '50%', background: 'white' }}>
