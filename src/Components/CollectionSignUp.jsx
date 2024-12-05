@@ -108,6 +108,7 @@ function CollectionSignUp({ children }) {
                   value={email}
                   onChange={(e) => { setEmail(e.target.value) }}
                   style={{
+                    
                     border: 'none',
                     backgroundColor: 'transparent',
                     outline: 'none',
@@ -167,7 +168,7 @@ function CollectionSignUp({ children }) {
       <Footer/>
       </div>
      
-      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'blue'}}>
+      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0",backgroundColor:'blue'}}>
         {/* <img
           src={animatedGifUrl}
           alt="Animated Background"
