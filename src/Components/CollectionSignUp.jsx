@@ -171,7 +171,7 @@ function CollectionSignUp({ children }) {
       <Footer/>
       </div>
      
-      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0",backgroundColor:'blue'}}>
+      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0",backgroundColor:'#52C3F1'}}>
         {/* <img
           src={animatedGifUrl}
           alt="Animated Background"

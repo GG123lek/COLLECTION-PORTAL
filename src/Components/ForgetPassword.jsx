@@ -174,7 +174,7 @@ function ForgetPassword() {
 
     
       {loading && <LoaderComponent />}
-      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'blue'}}>
+      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0" ,background:'#52C3F1'}}>
         {/* <img
           src={animatedGifUrl}
           alt="Animated Background"
