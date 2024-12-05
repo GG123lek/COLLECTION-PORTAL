@@ -168,7 +168,9 @@ function CollectionSignUp({ children }) {
         </div>
         <br/>
         <br/>
-      <Footer/>
+        <br/>
+        <br/>
+      <Footer />
       </div>
      
       <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0",backgroundColor:'#52C3F1'}}>
