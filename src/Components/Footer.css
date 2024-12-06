@@ -1,17 +1,11 @@
-.foter{
+.fot{
     display: flex;
     align-items: center;
     gap: 20px;
     justify-content: center;
     position: relative;
-    left: 55px;
+    left: 25px;
 }
-.foterA{
-color: #969494;
-}
-.foterB{
- color: #969494;
-}
-.foterC{
- color: #969494;
+.ft{
+    color: #969494;
 }

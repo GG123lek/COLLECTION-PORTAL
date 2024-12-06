@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import LoaderComponent from "../Components/LoaderComponent";
 import design from "../assets/Images/Design.png"
-import Footer from "../components/Footer"
+
 
 const animatedGifUrl = "https://media.giphy.com/media/3o6Ztpx8ASuS9Zd5WM/giphy.gif"; // Example external GIF URL
 
@@ -170,26 +170,14 @@ function CollectionSignUp({ children }) {
         <br/>
         <br/>
         <br/>
-      <Footer />
+     
       </div>
      
-      <div style={{ width: '80%',zIndex:"-1",display:"flex", justifyContent:"center", position: 'fixed', right:"0",backgroundColor:'#52C3F1'}}>
-        {/* <img
-          src={animatedGifUrl}
-          alt="Animated Background"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 0,
-          }}
-        /> */}
-        <img src={design} alt='' style={{
-         width:"55%",position:'relative',left:'250px',bottom:'50px'
-        }} />
+      <div style={{ width: '50%',backgroundColor:'#52C3F1'}}>
+        
+        {/* <img src={design} alt='' style={{
+        
+        }} /> */}
     
       </div>
 

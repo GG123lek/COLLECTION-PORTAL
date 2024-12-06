@@ -2,10 +2,10 @@ import "./Footer.css"
 
 function Footer() {
   return (
-    <div className="foter">
-      <p className="foterA">Unified payment@2022</p>
-      <p className="foterB">Privacy policy</p>
-      <p className="foterC">Terms & condition</p>
+    <div className="fot">
+      <p className="ft">Unified payment@2022</p>
+      <p className="ft">Privacy policy</p>
+      <p className="ft">Terms & condition</p>
     </div>
   )
 }

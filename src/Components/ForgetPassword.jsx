@@ -4,7 +4,7 @@ import imageunifiedpicture from "../assets/Images/imageunifiedpicture.png";
 import "./ForgetPassword.css";
 import LoaderComponent from "../Components/LoaderComponent";
 import design from "../assets/Images/Design.png";
-import FooterTwo from "./FooterTwo";
+
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -183,31 +183,20 @@ function ForgetPassword() {
         <br/>
         <br/>
         <br/>
-        <FooterTwo />
+       
       </div>
 
       {loading && <LoaderComponent />}
       <div
         style={{
-          width: '80%',
-          zIndex: "-1",
-          display: "flex",
-          justifyContent: "center",
-          position: 'fixed',
-          right: "0",
+          width: '50%',
           background: '#52C3F1',
         }}
       >
-        <img
+        {/* <img
           src={design}
           alt=''
-          style={{
-            width: "55%",
-            position: 'relative',
-            left: '250px',
-            bottom: '50px',
-          }}
-        />
+        /> */}
       </div>
     </div>
   );

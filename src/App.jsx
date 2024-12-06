@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CollectionSignUp from './Components/CollectionSignUp';
 import ForgetPassword from './Components/ForgetPassword';
 import OTPVerification from './Components/OTPVerification';
+import MyPaginate from './components/MyPaginate';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/users" element={<Users />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/reporting" element={<Reporting />} />
+          <Route path="/mypaginate" element={<MyPaginate/>} />
         </Routes>
       </div>
     </BrowserRouter>
